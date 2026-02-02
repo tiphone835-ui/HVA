@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HealthValue Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#about-us">About Us</a>
+                <a href="index.html#our-services">Services</a>
+                <a href="index.html#subject-coverage">Subject</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Publications</a>
+                <a href="blog.html" class="nav-blog">Blog</a>
+            </div>
+            <a href="contact.html" class="btn-contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Contact Us</h1>
+            <h2 class="tagline">Get in Touch with HealthValue Analytics</h2>
+        </div>
+    </header>
+
+    <!-- Contact Content Section -->
+    <section class="about-us open"> <!-- reusing 'about-us' styles for consistent padding/bg, forcing 'open' -->
+        <div class="container">
+            <!-- Map and Contact Info can go here. Reusing the previous structure but wrapping it nicely -->
+            
+            <div class="map-container" style="margin-top: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden;">
+                <!-- Google Embed Map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15220.04646738988!2d78.79069502932977!3d17.476483664796783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b0ac640c499%3A0xe549b6736270d4d9!2sBibinagar%2C%20Telangana%20508126!5e0!3m2!1sen!2sin!4v1706634589123!5m2!1sen!2sin" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div class="floating-contact-card" style="position: relative; top: -50px; margin: 0 auto; width: 90%; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem;">
+                    <div class="contact-col" style="text-align: center; flex: 1; min-width: 200px;">
+                        <div class="icon-circle" style="background: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.2rem;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">India Office</h4>
+                        <p style="color: #666; line-height: 1.6;">
+                            Bibinagar, Near AIIMS,<br>
+                            Bibinagar, 508126
+                        </p>
+                    </div>
+
+                    <div class="contact-col" style="text-align: center; flex: 1; min-width: 200px;">
+                        <div class="icon-circle" style="background: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.2rem;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Email Address</h4>
+                        <p>
+                            <a href="mailto:healthvalueanalytics@gmail.com" class="contact-link" style="color: var(--primary-color); text-decoration: none;">healthvalueanalytics@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-col" style="text-align: center; flex: 1; min-width: 200px;">
+                        <div class="icon-circle" style="background: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.2rem;">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Connect</h4>
+                        <div class="contact-socials" style="display: flex; gap: 1rem; justify-content: center; margin-top: 0.5rem;">
+                            <a href="#" style="color: var(--primary-color); font-size: 1.5rem;"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" style="color: var(--primary-color); font-size: 1.5rem;"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact-info">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img-footer">
+                </div>
+                <div class="office-info">
+                    <h4><i class="fa-solid fa-location-dot"></i> India Office</h4>
+                    <p>
+                        Bibinagar, Near AIIMS,<br>
+                        Bibinagar, 508126<br>
+                        Email: <a href="mailto:healthvalueanalytics@gmail.com" class="footer-email">healthvalueanalytics@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#about-us">About Us</a></li>
+                    <li><a href="index.html#our-services">Services</a></li>
+                    <li><a href="index.html#subject-coverage">Subject</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Publications</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="work-with-us">
+                    <h3>Work With Us</h3>
+                    <p>
+                        We foster a culture of teamwork, creativity, and ethics. Join us to make a difference in healthcare analytics.
+                        Explore our <a href="#" class="career-link">CAREERS</a> page.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

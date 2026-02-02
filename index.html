@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthValue Analytics (HVA)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Using FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#about-us" id="nav-about">About Us</a>
+                <a href="#our-services" id="nav-services">Services</a>
+                <a href="#subject-coverage" id="nav-subject">Subject</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Publications</a>
+                <a href="blog.html" class="nav-blog">Blog</a>
+            </div>
+            <a href="contact.html" class="btn-contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>HealthValue Analytics</h1>
+
+        </div>
+    </header>
+
+    <!-- Scrolling Updates Marquee -->
+    <section class="updates-marquee">
+        <div class="marquee-container">
+            <div class="marquee-track" id="marquee-track">
+                <!-- Items will be dynamically populated by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tagline (Moved) -->
+    <div class="container" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <h2 class="tagline" style="color: var(--primary-color); font-size: 1.5rem;">Providing Innovative Solutions and Services Across All Domains</h2>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us">
+        <div class="container">
+            <div class="about-content">
+                <p><strong>HealthValue Analytics</strong> is a leading academic and scientific platform dedicated to advancing excellence in research, healthcare, and evidence-based decision-making. We provide comprehensive writing, editing, and analytical services to researchers, clinicians, academicians, institutions, and industry partners across the globe.</p>
+                
+                <p>Our mission is to bridge the gap between high-quality research and impactful dissemination. We support the entire research lifecycle—from study conceptualization and protocol development to manuscript preparation, statistical analysis, and successful publication in reputable peer-reviewed journals.</p>
+                
+                <p>At HealthValue Analytics, we combine scientific rigor with editorial precision. Our multidisciplinary team comprises experienced researchers, medical writers, statisticians, methodologists, and subject-matter experts with strong backgrounds in clinical research, public health, pharmacology, health economics, and biomedical sciences. This enables us to deliver services that are not only technically accurate but also aligned with international ethical, regulatory, and reporting standards.</p>
+                
+                <p>We are committed to <span class="highlight-text">integrity, transparency, and academic excellence</span>. All our services adhere to globally accepted guidelines such as CONSORT, STROBE, PRISMA, ICMJE, and GCP, ensuring that the work we support meets the highest scientific and ethical benchmarks.</p>
+
+                <h3>What We Do</h3>
+                <ul>
+                    <li>Academic and scientific writing</li>
+                    <li>Manuscript editing and publication support</li>
+                    <li>Systematic reviews and meta-analyses</li>
+                    <li>Study design, protocol development, and statistical analysis</li>
+                    <li>Real-world evidence and health outcomes research</li>
+                    <li>Research mentoring and capacity building</li>
+                </ul>
+
+                <h3>Our Vision</h3>
+                <p>To be a trusted global partner in academic and scientific research, empowering researchers and institutions to generate, communicate, and translate evidence that improves healthcare outcomes and policy.</p>
+
+                <h3>Our Values</h3>
+                <ul class="values-list">
+                    <li><strong>Scientific Credibility:</strong> Led by experienced researchers and subject-matter experts</li>
+                    <li><strong>End-to-End Support:</strong> From study conception to publication and dissemination</li>
+                    <li><strong>Global Standards:</strong> Compliance with CONSORT, STROBE, PRISMA, ICMJE, and GCP</li>
+                    <li><strong>Customized Solutions:</strong> Tailored services for academia, healthcare, and industry</li>
+                    <li><strong>Impact-Driven:</strong> Focused on visibility, quality, and real-world relevance of research</li>
+                </ul>
+
+                <p class="closing-statement">HealthValue Analytics stands at the intersection of science, writing, and analytics—transforming data into knowledge and research into meaningful impact.</p>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Services Section (Hidden by default, reuses about-us styles) -->
+    <section id="our-services" class="about-us">
+        <div class="container">
+            <div class="about-content">
+                <p><strong>HealthValue Analytics</strong> delivers integrated scientific, analytical, and editorial solutions to support high-quality research, evidence generation, and impactful dissemination across academia, healthcare, and life sciences.</p>
+                
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Scientific & Academic Writing</h3>
+                <ul>
+                    <li>Research manuscripts and review articles</li>
+                    <li>Systematic reviews and meta-analyses</li>
+                    <li>Study protocols, SAPs, and grant writing</li>
+                    <li>Abstracts, posters, and presentations</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Editorial & Publication Support</h3>
+                <ul>
+                    <li>Scientific and language editing</li>
+                    <li>Journal selection and submission support</li>
+                    <li>Peer-review response and revisions</li>
+                    <li>Compliance with ICMJE, CONSORT, PRISMA, STROBE</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Study Design & Methodology</h3>
+                <ul>
+                    <li>RCTs and observational study design</li>
+                    <li>Sample size and power calculations</li>
+                    <li>CRFs and data collection tools</li>
+                    <li>Ethics and regulatory documentation</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Statistical Analysis & Data Analytics</h3>
+                <ul>
+                    <li>Clinical and epidemiological analyses</li>
+                    <li>Regression, survival, and longitudinal models</li>
+                    <li>Data cleaning, validation, and visualization</li>
+                    <li>Statistical interpretation and reporting</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Research Mentoring & Training</h3>
+                <ul>
+                    <li>Research mentoring and thesis support</li>
+                    <li>Academic writing and methodology workshops</li>
+                    <li>Statistics and publication strategy training</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Our Commitment</h3>
+                <ul>
+                    <li>Scientific rigor and ethical integrity</li>
+                    <li>Global standards and regulatory alignment</li>
+                    <li>Tailored, client-focused solutions</li>
+                    <li>Evidence with real-world impact</li>
+                </ul>
+
+                <p class="closing-statement">HealthValue Analytics partners with researchers and organizations to transform data into credible evidence and informed decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Subject Coverage Section (Hidden by default, reuses about-us styles) -->
+    <section id="subject-coverage" class="about-us">
+        <div class="container">
+            <div class="about-content">
+                <p><strong>Across All Disciplines</strong></p>
+                <p>HealthValue Analytics offers comprehensive medical, scientific, and technical writing services across a wide spectrum of disciplines. Our expertise spans both medical and non-medical domains, supporting academic, clinical, regulatory, and industry-focused research and documentation needs.</p>
+                
+                <p>Our team comprises certified scientific and medical writers, statisticians, and subject-matter experts with multidisciplinary backgrounds in life sciences, medicine, engineering, computer science, and emerging technologies. Specialists with deep therapeutic and domain-specific expertise are involved at every stage of the project lifecycle, ensuring scientific accuracy, regulatory compliance, and clarity of communication.</p>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 40px;">Disciplines We Cover</h3>
+
+                <h3>Life Sciences & Biotechnology</h3>
+                <ul>
+                    <li>Animal Science</li>
+                    <li>Agriculture & Agrotechnology</li>
+                    <li>Biotechnology</li>
+                    <li>Biomolecular Engineering</li>
+                    <li>Bioengineering</li>
+                    <li>Biomaterials & Biopolymers</li>
+                    <li>Biophysics</li>
+                    <li>Biochemistry</li>
+                    <li>Cell Biology</li>
+                    <li>Genomics & Glycobiology</li>
+                    <li>Enzymes & Biocatalysts</li>
+                    <li>Protein Engineering & Peptides</li>
+                    <li>Tissue Engineering</li>
+                    <li>Nanobiotechnology</li>
+                    <li>Nutraceuticals</li>
+                    <li>Biomonitoring</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Medical & Clinical Sciences</h3>
+                <ul>
+                    <li>Medicine & Life Sciences</li>
+                    <li>Cardiology & Cardiovascular Biology</li>
+                    <li>Cancer Research</li>
+                    <li>Neurology & Neuroscience</li>
+                    <li>Psychiatry & Psychology</li>
+                    <li>Public Health</li>
+                    <li>Dermatology</li>
+                    <li>Diabetology</li>
+                    <li>Gynecology</li>
+                    <li>Dentistry</li>
+                    <li>Surgery</li>
+                    <li>Radiology & Medical Imaging</li>
+                    <li>Medical Animation & Imaging Techniques</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Pharmaceutical & Chemical Sciences</h3>
+                <ul>
+                    <li>Pharmaceuticals</li>
+                    <li>Medicinal & Pharmaceutical Chemistry</li>
+                    <li>Medicinal Chemistry</li>
+                    <li>Drug Delivery Systems</li>
+                    <li>Nuclear Chemistry</li>
+                    <li>Cosmeceuticals</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Engineering & Technology</h3>
+                <ul>
+                    <li>Biomedical Engineering</li>
+                    <li>Chemical Engineering</li>
+                    <li>Ceramic Engineering</li>
+                    <li>Material Science</li>
+                    <li>Molecular Engineering</li>
+                    <li>Production Engineering</li>
+                    <li>Nuclear Engineering</li>
+                    <li>Optics & Electronics</li>
+                    <li>Robotics</li>
+                    <li>Sensor Technology</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Computing, Data & Digital Technologies</h3>
+                <ul>
+                    <li>Computer Science</li>
+                    <li>Algorithms</li>
+                    <li>Big Data & Hadoop</li>
+                    <li>Data Mining</li>
+                    <li>Biostatistical Programming</li>
+                    <li>Bioinformatics & Biocomputing</li>
+                    <li>Cloud Computing</li>
+                    <li>Machine Learning</li>
+                    <li>Internet of Things (IoT)</li>
+                    <li>Augmented Reality</li>
+                    <li>E-Learning</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e1e4e8;">
+
+                <h3>Environmental, Food & Forensic Sciences</h3>
+                <ul>
+                    <li>Environmental Science</li>
+                    <li>Food Science & Food Processing</li>
+                    <li>Forensics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Grid) -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid" id="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card" data-service="1">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <h3>Scientific & Academic Writing</h3>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card" data-service="2">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3>Editorial & Publication Support</h3>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card" data-service="3">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3>Study Design & Methodology</h3>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card" data-service="4">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Statistical Analysis & Data Analytics</h3>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card" data-service="5">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3>Research Mentoring & Training</h3>
+                </div>
+            </div>
+
+            <!-- Service Details Section (Expandable) -->
+            <div id="service-details-container" class="service-details-container">
+                <div class="service-content-wrapper" id="service-content">
+                    <!-- Content will be injected here via JavaScript -->
+                    <div class="placeholder-text">Select a service above to view details.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Partners & Collaborators Marquee -->
+    <section class="partners-marquee">
+        <div class="container">
+            <h3>Trusted by Leading Organizations</h3>
+            <div class="partners-container">
+                <div class="partners-track">
+                    <!-- Original Set -->
+                    <div class="partner-logo"><img src="partners/partner_01.jpg" alt="Partner 1"></div>
+                    <div class="partner-logo"><img src="partners/partner_02.jpg" alt="Partner 2"></div>
+                    <div class="partner-logo"><img src="partners/partner_03.jpg" alt="Partner 3"></div>
+                    <div class="partner-logo"><img src="partners/partner_04.jpg" alt="Partner 4"></div>
+                    <div class="partner-logo"><img src="partners/partner_05.png" alt="Partner 5"></div>
+                    <div class="partner-logo"><img src="partners/partner_06.jpg" alt="Partner 6"></div>
+                    <div class="partner-logo"><img src="partners/partner_07.png" alt="Partner 7"></div>
+                    <div class="partner-logo"><img src="partners/partner_08.jpg" alt="Partner 8"></div>
+                    <div class="partner-logo"><img src="partners/partner_09.jpg" alt="Partner 9"></div>
+                    <div class="partner-logo"><img src="partners/partner_10.png" alt="Partner 10"></div>
+                    <div class="partner-logo"><img src="partners/partner_11.png" alt="Partner 11"></div>
+                    <div class="partner-logo"><img src="partners/partner_12.png" alt="Partner 12"></div>
+                    <div class="partner-logo"><img src="partners/partner_13.jpg" alt="Partner 13"></div>
+                    <div class="partner-logo"><img src="partners/partner_14.jpg" alt="Partner 14"></div>
+                    
+                    <!-- Duplicated Set for Infinite Scroll -->
+                    <div class="partner-logo"><img src="partners/partner_01.jpg" alt="Partner 1"></div>
+                    <div class="partner-logo"><img src="partners/partner_02.jpg" alt="Partner 2"></div>
+                    <div class="partner-logo"><img src="partners/partner_03.jpg" alt="Partner 3"></div>
+                    <div class="partner-logo"><img src="partners/partner_04.jpg" alt="Partner 4"></div>
+                    <div class="partner-logo"><img src="partners/partner_05.png" alt="Partner 5"></div>
+                    <div class="partner-logo"><img src="partners/partner_06.jpg" alt="Partner 6"></div>
+                    <div class="partner-logo"><img src="partners/partner_07.png" alt="Partner 7"></div>
+                    <div class="partner-logo"><img src="partners/partner_08.jpg" alt="Partner 8"></div>
+                    <div class="partner-logo"><img src="partners/partner_09.jpg" alt="Partner 9"></div>
+                    <div class="partner-logo"><img src="partners/partner_10.png" alt="Partner 10"></div>
+                    <div class="partner-logo"><img src="partners/partner_11.png" alt="Partner 11"></div>
+                    <div class="partner-logo"><img src="partners/partner_12.png" alt="Partner 12"></div>
+                    <div class="partner-logo"><img src="partners/partner_13.jpg" alt="Partner 13"></div>
+                    <div class="partner-logo"><img src="partners/partner_14.jpg" alt="Partner 14"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Simplified) -->
+    <footer class="footer" id="contact-info">
+        <div class="container footer-grid">
+            <!-- Column 1: Company Info -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img-footer">
+                </div>
+                <div class="office-info">
+                    <h4><i class="fa-solid fa-location-dot"></i> India Office</h4>
+                    <p>
+                        Bibinagar, Near AIIMS,<br>
+                        Bibinagar, 508126<br>
+                        Email: <a href="mailto:healthvalueanalytics@gmail.com" class="footer-email">healthvalueanalytics@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#our-services">Services</a></li>
+                    <li><a href="#subject-coverage">Subject</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Publications</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Connect -->
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="work-with-us">
+                    <h3>Work With Us</h3>
+                    <p>
+                        We foster a culture of teamwork, creativity, and ethics. Join us to make a difference in healthcare analytics.
+                        Explore our <a href="careers.html" class="career-link">CAREERS</a> page.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div id="enquire-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Send Us Your Enquiry</h2>
+            <form id="enquiry-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Phone">
+                    <input type="text" placeholder="Subject">
+                </div>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - HealthValue Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#about-us">About Us</a>
+                <a href="index.html#our-services">Services</a>
+                <a href="index.html#subject-coverage">Subject</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Publications</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <a href="contact.html" class="btn-contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Careers Header -->
+    <section class="careers-header">
+        <div class="container">
+            <h1>Careers</h1>
+        </div>
+    </section>
+
+    <!-- Careers Form Section -->
+    <section class="careers-section">
+        <div class="container careers-form-container">
+            <form action="mailto:healthvalueanalytics@gmail.com" method="post" enctype="text/plain" id="careers-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+                
+                <div class="form-group file-upload-group">
+                    <label for="resume">Attach your resume *</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">I agree to the privacy policy.</label>
+                </div>
+
+                <button type="submit" class="btn-submit-career">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact-info">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img-footer">
+                </div>
+                <div class="office-info">
+                    <h4><i class="fa-solid fa-location-dot"></i> India Office</h4>
+                    <p>
+                        Bibinagar, Near AIIMS,<br>
+                        Bibinagar, 508126<br>
+                        Email: <a href="mailto:healthvalueanalytics@gmail.com" class="footer-email">healthvalueanalytics@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#about-us">About Us</a></li>
+                    <li><a href="index.html#our-services">Services</a></li>
+                    <li><a href="index.html#subject-coverage">Subject</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Publications</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="work-with-us">
+                    <h3>Work With Us</h3>
+                    <p>
+                        We foster a culture of teamwork, creativity, and ethics. Join us to make a difference in healthcare analytics.
+                        Explore our <a href="careers.html" class="career-link">CAREERS</a> page.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Optional: Client-side validation or enhancement
+        const resumeInput = document.getElementById('resume');
+        resumeInput.addEventListener('change', function() {
+            // Check file size or type if needed
+        });
+    </script>
+</body>
+</html>
