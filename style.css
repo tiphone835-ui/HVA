@@ -473,7 +473,7 @@ body {
 .marquee-track {
     display: inline-flex;
     gap: 30px;
-    animation: scroll-left 25s linear infinite;
+    animation: scroll-left 120s linear infinite;
     padding-left: 30px; /* Initial offset */
 }
 
@@ -494,65 +494,97 @@ body {
 }
 
 .update-card {
-    background-color: var(--white);
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    min-width: 300px;
+    /* Background color is set inline via JS */
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Softer shadow */
+    min-width: 350px; /* Slightly wider */
     text-decoration: none;
     color: var(--text-dark);
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-left: 4px solid var(--primary-color);
+    gap: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+    position: relative; /* For absolute icon positioning */
+    overflow: hidden; /* Clip the icon */
+}
+
+.card-bg-icon {
+    position: absolute;
+    bottom: -15px; /* Partially cut off at bottom */
+    right: -10px; /* Partially cut off at right */
+    font-size: 5rem; /* Large watermark */
+    opacity: 0.1; /* Very subtle */
+    color: var(--primary-color);
+    pointer-events: none;
+    z-index: 0;
+    transform: rotate(-15deg);
+}
+
+.card-header, .card-topic, .card-slr-title {
+    position: relative;
+    z-index: 1; /* Ensure text is above icon */
 }
 
 .update-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.update-type {
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-category {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    color: #555;
+    opacity: 0.8;
 }
 
-.update-type.paper {
-    color: #2a9d8f;
+.card-status {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,0.6);
+    color: #333;
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
-.update-type.news {
-    color: #d62828; /* Different color for news */
-}
+/* Status specific colors if needed, or rely on general badge style */
+.card-status.upcoming { color: #0277bd; }
+.card-status.published { color: #2e7d32; }
+.card-status.in-review { color: #ef6c00; }
+.card-status.drafting { color: #8e24aa; }
 
-.update-card h4 {
-    font-size: 1rem;
+
+.card-topic {
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
-    white-space: normal; /* Allow title to wrap if needed, though card is wide */
+    line-height: 1.3;
 }
 
-.update-card p {
+.card-slr-title {
     font-size: 0.9rem;
-    color: #555;
+    font-style: italic; /* Distinctive style for Title */
+    color: #444;
     margin: 0;
-    white-space: normal;
+    line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit description lines */
-    line-clamp: 2; /* Standard property */
+    -webkit-line-clamp: 3; /* Allow slightly more text */
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-
-.update-date {
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 5px;
 }
 
 /* Enquiry Modal */

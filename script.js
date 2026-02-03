@@ -25,35 +25,128 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const updatesData = [
+        // 1. Medical & Health Sciences (Light Blue/Cyan Gradients)
         {
-            type: "paper", // or "news"
-            title: "AI in Pharmacovigilance",
-            desc: "Exploring predictive models for adverse event reporting.",
-            date: "Feb 15, 2026"
+            category: "Medical & Health Sciences",
+            topic: "Precision Medicine for Aging",
+            slrTitle: '"Efficacy of AI-driven personalized treatment plans for neurodegenerative diseases: A systematic review of clinical outcomes (2021–2026)."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)",
+            icon: "fa-user-doctor"
         },
         {
-            type: "news",
-            title: "Dr. A. Sharma",
-            desc: "Keynote speaker at Global Health Analytics Summit.",
-            date: "Jan 28, 2026"
+            category: "Medical & Health Sciences",
+            topic: "Eco-Anxiety & Public Health",
+            slrTitle: '"The global prevalence of climate-related mental health disorders in youth: Mapping evidence and intervention strategies."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%)",
+            icon: "fa-earth-americas",
+            link: "#"
         },
         {
-            type: "paper",
-            title: "Real-World Evidence",
-            desc: "Methodologies for non-interventional study designs.",
-            date: "Mar 02, 2026"
+            category: "Medical & Health Sciences",
+            topic: "Digital Health Equity",
+            slrTitle: '"Barriers to telemedicine adoption in low-resource settings: A systematic analysis of infrastructure vs. cultural literacy."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%)",
+            icon: "fa-mobile-screen-button",
+            link: "#"
+        },
+
+        // 2. Agriculture & Food Science (Greens/Earth Tones)
+        {
+            category: "Agriculture & Food Science",
+            topic: "Climate-Resilient Crops",
+            slrTitle: '"Effectiveness of CRISPR/Cas9 in developing heat-tolerant cereal varieties: A systematic review of field trial successes."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)",
+            icon: "fa-wheat-awn",
+            link: "#"
         },
         {
-            type: "news",
-            title: "New Partnership",
-            desc: "Collaborating with leading Clinical Research Orgs.",
-            date: "Jan 20, 2026"
+            category: "Agriculture & Food Science",
+            topic: "Precision Agriculture (IoT)",
+            slrTitle: '"The impact of IoT-driven \'Real-Time\' soil monitoring on water conservation in arid regions: A global synthesis."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%)",
+            icon: "fa-satellite-dish",
+            link: "#"
         },
         {
-            type: "paper",
-            title: "Biostatistics Trends",
-            desc: "Adaptive trial designs in oncology research.",
-            date: "Feb 22, 2026"
+            category: "Agriculture & Food Science",
+            topic: "Circular Food Systems",
+            slrTitle: '"Systematic analysis of consumer acceptance vs. nutritional safety of lab-grown meat and insect-based proteins."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)",
+            icon: "fa-recycle",
+            link: "#"
+        },
+        {
+            category: "Agriculture & Food Science",
+            topic: "Post-Harvest Loss",
+            slrTitle: '"The role of AI and blockchain in reducing food waste within global perishable supply chains."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%)",
+            icon: "fa-boxes-packing",
+            link: "#"
+        },
+
+        // 3. Social Sciences (Warm Tones)
+        {
+            category: "Social Sciences",
+            topic: "The Gig Economy 2.0",
+            slrTitle: '"Social security and mental well-being in the platform-based workforce: A systematic review of global labor policy impacts."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%)",
+            icon: "fa-people-carry-box",
+            link: "#"
+        },
+        {
+            category: "Social Sciences",
+            topic: "Misinformation & Democracy",
+            slrTitle: '"The role of generative AI in shaping electoral narratives: A systematic review of digital literacy interventions."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%)",
+            icon: "fa-users-viewfinder",
+            link: "#"
+        },
+        {
+            category: "Social Sciences",
+            topic: "Inclusive Education",
+            slrTitle: '"Impact of VR-based immersive learning on neurodivergent students: A systematic analysis of pedagogical outcomes."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #fffde7 0%, #fff9c4 100%)",
+            icon: "fa-hands-holding-child",
+            link: "#"
+        },
+
+        // 4. General Science & Environment (Purples/Teals)
+        {
+            category: "General Science & Environment",
+            topic: "Green Hydrogen",
+            slrTitle: '"Barriers to scaling green hydrogen for heavy industry: A systematic review of technical vs. economic feasibility."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%)",
+            icon: "fa-industry",
+            link: "#"
+        },
+        {
+            category: "General Science & Environment",
+            topic: "Microplastics in Ecosystems",
+            slrTitle: '"The efficacy of bio-remediation techniques in removing microplastics from marine environments: A systematic evidence map."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%)",
+            icon: "fa-water",
+            link: "#"
+        },
+        {
+            category: "General Science & Environment",
+            topic: "Energy Storage",
+            slrTitle: '"Beyond Lithium-ion: A systematic review of the scalability and environmental impact of Sodium-ion battery technologies."',
+            status: "Upcoming",
+            color: "linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%)",
+            icon: "fa-battery-full",
+            link: "#"
         }
     ];
     // -------------------------
@@ -62,14 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const marqueeTrack = document.getElementById('marquee-track');
     
     if (marqueeTrack) {
-        const createCardHTML = (item) => `
-            <a href="#" class="update-card">
-                <span class="update-type ${item.type}">${item.type === 'paper' ? 'Upcoming Paper' : (item.title === 'New Partnership' ? 'Team Update' : 'Author News')}</span>
-                <h4>${item.title}</h4>
-                <p>${item.desc}</p>
-                <span class="update-date">${item.date}</span>
-            </a>
-        `;
+        const createCardHTML = (item) => {
+            const tag = item.link ? 'a' : 'div';
+            const hrefAttr = item.link ? `href="${item.link}" target="_blank"` : '';
+            
+            return `
+            <${tag} ${hrefAttr} class="update-card" style="background: ${item.color}; border-left: none; cursor: ${item.link ? 'pointer' : 'default'}">
+                <div class="card-bg-icon"><i class="fa-solid ${item.icon}"></i></div>
+                <div class="card-header">
+                    <span class="card-category">${item.category}</span>
+                    <span class="card-status ${item.status.toLowerCase().replace(' ', '-')}">${item.status}</span>
+                </div>
+                <h4 class="card-topic">${item.topic}</h4>
+                <p class="card-slr-title">${item.slrTitle}</p>
+            </${tag}>
+            `;
+        };
 
         // Generate HTML for one set of items
         const itemsHTML = updatesData.map(createCardHTML).join('');
@@ -236,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = enquiryForm.querySelector('textarea').value;
 
         // Construct Email Body
-        const bodyContent = `Name: ${name}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+        const bodyContent = `Name: ${name}\r\nPhone: ${phone}\r\nEmail: ${email}\r\n\r\nMessage:\r\n${message}`;
         
         // Construct Mailto Link
         const mailtoLink = `mailto:healthvalueanalytics@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
