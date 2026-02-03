@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updatesData = [
         {
-            type: "paper", // or "news"
-            title: "AI in Pharmacovigilance",
-            desc: "Exploring predictive models for adverse event reporting.",
-            date: "Feb 15, 2026"
+            type: "Medical & Health Sciences", // or "news"
+            title: "Precision Medicine for Aging",
+            desc: "Efficacy of AI-driven personalized treatment plans for neurodegenerative diseases: A systematic review of clinical outcomes (2021–2026).",
+            date: "Up Coming"
         },
         {
             type: "news",
