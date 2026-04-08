@@ -28,6 +28,50 @@ document.addEventListener('DOMContentLoaded', () => {
         // 1. Medical & Health Sciences (Light Blue/Cyan Gradients)
         {
             category: "Medical & Health Sciences",
+            topic: "Deprescribing",
+            slrTitle: 'Manuscript Title: Towards safer medication use in older adults: Investigating barriers and facilitators of deprescribing',
+            author: "Dr. Vijaya Kumar Karra",
+            status: "Completed",
+            color: "#ffffff", // Will be overridden by image if present
+            image: "deprescribing.jpg",
+            icon: "fa-pills",
+            link: "https://bpspubs.onlinelibrary.wiley.com/doi/10.1002/bcp.70319"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "on Polypharmacy and Deprescribing",
+            slrTitle: 'Manuscript Title: Exploring the Knowledge and Attitudes of Physicians on Polypharmacy and Deprescribing in Clinical Practice: a Cross-Sectional Study',
+            author: "Dr. Vijaya Kumar Karra",
+            status: "Completed",
+            color: "#ffffff",
+            image: "polypharmacy.jpg",
+            icon: "fa-prescription-bottle-medical",
+            link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347019/"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "Sickle Cell Disease",
+            slrTitle: 'Manuscript Title: IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
+            author: "Dr. Varun Chaithanya Gurram",
+            status: "Completed",
+            color: "#ffffff",
+            image: "sickle_cell.jpg",
+            icon: "fa-microscope",
+            link: "https://www.jchr.org/index.php/JCHR/article/view/6541"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "COVID-19",
+            slrTitle: 'Manuscript Title: Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
+            author: "Sai Kiran Gangadari",
+            status: "Completed",
+            color: "#ffffff",
+            image: "covid_ai.jpg",
+            icon: "fa-virus-covid",
+            link: "https://link.springer.com/article/10.1007/s44163-024-00122-z"
+        },
+        {
+            category: "Medical & Health Sciences",
             topic: "Precision Medicine for Aging",
             slrTitle: '"Efficacy of AI-driven personalized treatment plans for neurodegenerative diseases: A systematic review of clinical outcomes (2021–2026)."',
             status: "Upcoming",
@@ -158,9 +202,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const createCardHTML = (item) => {
             const tag = item.link ? 'a' : 'div';
             const hrefAttr = item.link ? `href="${item.link}" target="_blank"` : '';
+            const hasImageClass = item.image ? 'has-image' : '';
+            const bgStyle = item.image 
+                ? `background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${item.image}') center/cover no-repeat;` 
+                : `background: ${item.color};`;
             
             return `
-            <${tag} ${hrefAttr} class="update-card" style="background: ${item.color}; border-left: none; cursor: ${item.link ? 'pointer' : 'default'}">
+            <${tag} ${hrefAttr} class="update-card ${hasImageClass}" style="${bgStyle} border-left: none; cursor: ${item.link ? 'pointer' : 'default'}">
                 <div class="card-bg-icon"><i class="fa-solid ${item.icon}"></i></div>
                 <div class="card-header">
                     <span class="card-category">${item.category}</span>
@@ -168,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <h4 class="card-topic">${item.topic}</h4>
                 <p class="card-slr-title">${item.slrTitle}</p>
+                ${item.author ? `<p class="card-author">${item.author}</p>` : ''}
             </${tag}>
             `;
         };

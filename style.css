@@ -564,6 +564,11 @@ body {
 .card-status.published { color: #2e7d32; }
 .card-status.in-review { color: #ef6c00; }
 .card-status.drafting { color: #8e24aa; }
+.card-status.completed { 
+    background-color: #e6fffa; 
+    color: #2c7a7b; 
+    border-color: #81e6d9;
+}
 
 
 .card-topic {
@@ -585,6 +590,37 @@ body {
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.update-card.has-image {
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.update-card.has-image .card-category {
+    color: #e2e8f0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.update-card.has-image .card-topic,
+.update-card.has-image .card-slr-title,
+.update-card.has-image .card-author {
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.card-author {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: auto; /* Push to bottom */
+    color: var(--accent-color);
+    line-height: 1.4;
+}
+
+.update-card.has-image .card-author {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 /* Enquiry Modal */
