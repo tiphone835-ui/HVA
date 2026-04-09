@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             category: "Medical & Health Sciences",
-            topic: "on Polypharmacy and Deprescribing",
+            topic: "Polypharmacy and Deprescribing",
             slrTitle: 'Exploring the Knowledge and Attitudes of Physicians on Polypharmacy and Deprescribing in Clinical Practice: a Cross-Sectional Study',
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
