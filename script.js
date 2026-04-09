@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             category: "Medical & Health Sciences",
             topic: "Deprescribing",
-            slrTitle: 'Manuscript Title: Towards safer medication use in older adults: Investigating barriers and facilitators of deprescribing',
+            slrTitle: 'Towards safer medication use in older adults: Investigating barriers and facilitators of deprescribing',
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff", // Will be overridden by image if present
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             category: "Medical & Health Sciences",
             topic: "on Polypharmacy and Deprescribing",
-            slrTitle: 'Manuscript Title: Exploring the Knowledge and Attitudes of Physicians on Polypharmacy and Deprescribing in Clinical Practice: a Cross-Sectional Study',
+            slrTitle: 'Exploring the Knowledge and Attitudes of Physicians on Polypharmacy and Deprescribing in Clinical Practice: a Cross-Sectional Study',
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff",
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             category: "Medical & Health Sciences",
             topic: "Sickle Cell Disease",
-            slrTitle: 'Manuscript Title: IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
+            slrTitle: 'IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
             author: "Dr. Varun Chaithanya Gurram",
             status: "Completed",
             color: "#ffffff",
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             category: "Medical & Health Sciences",
             topic: "COVID-19",
-            slrTitle: 'Manuscript Title: Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
+            slrTitle: 'Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
             author: "Sai Kiran Gangadari",
             status: "Completed",
             color: "#ffffff",
             image: "covid_ai.jpg",
             icon: "fa-virus-covid",
-            link: "https://link.springer.com/article/10.1007/s44163-024-00122-z"
+            link: "https://doi.org/10.1007/s44163-025-00625-x"
         },
         {
             category: "Medical & Health Sciences",
@@ -202,11 +202,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const createCardHTML = (item) => {
             const tag = item.link ? 'a' : 'div';
             const hrefAttr = item.link ? `href="${item.link}" target="_blank"` : '';
-            const hasImageClass = item.image ? 'has-image' : '';
+            const hasImageClass = item.image ? 'has-image split-layout' : '';
             const bgStyle = item.image 
-                ? `background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${item.image}') center/cover no-repeat;` 
+                ? '' // Background will be handled by the image side div
                 : `background: ${item.color};`;
             
+            if (item.image) {
+                return `
+                <${tag} ${hrefAttr} class="update-card ${hasImageClass}" style="border-left: none; cursor: ${item.link ? 'pointer' : 'default'}">
+                    <div class="card-image-side" style="background-image: url('${item.image}')"></div>
+                    <div class="card-text-side">
+                        <div class="card-header">
+                            <span class="card-category">${item.category}</span>
+                            <span class="card-status ${item.status.toLowerCase().replace(' ', '-')}">${item.status}</span>
+                        </div>
+                        <h4 class="card-topic">${item.topic}</h4>
+                        <p class="card-slr-title">${item.slrTitle}</p>
+                        ${item.author ? `<p class="card-author">${item.author}</p>` : ''}
+                        ${item.status === 'Completed' && item.link ? `
+                        <div class="card-action">
+                            <span>Read Full Article</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>` : ''}
+                    </div>
+                </${tag}>
+                `;
+            }
+
             return `
             <${tag} ${hrefAttr} class="update-card ${hasImageClass}" style="${bgStyle} border-left: none; cursor: ${item.link ? 'pointer' : 'default'}">
                 <div class="card-bg-icon"><i class="fa-solid ${item.icon}"></i></div>
@@ -217,6 +239,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4 class="card-topic">${item.topic}</h4>
                 <p class="card-slr-title">${item.slrTitle}</p>
                 ${item.author ? `<p class="card-author">${item.author}</p>` : ''}
+                ${item.status === 'Completed' && item.link ? `
+                <div class="card-action">
+                    <span>Read Full Article</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>` : ''}
             </${tag}>
             `;
         };
