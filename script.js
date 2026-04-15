@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Medical & Health Sciences",
             topic: "Deprescribing",
             slrTitle: 'Towards safer medication use in older adults: Investigating barriers and facilitators of deprescribing',
+            journal: "British Journal of Clinical Pharmacology",
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff", // Will be overridden by image if present
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Medical & Health Sciences",
             topic: "Polypharmacy and Deprescribing",
             slrTitle: 'Exploring the Knowledge and Attitudes of Physicians on Polypharmacy and Deprescribing in Clinical Practice: a Cross-Sectional Study',
+            journal: "Mædica - a Journal of Clinical Medicine",
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff",
@@ -52,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Medical & Health Sciences",
             topic: "Sickle Cell Disease",
             slrTitle: 'IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
+            journal: "Journal of Chemical Health Risks",
             author: "Dr. Varun Chaithanya Gurram",
             status: "Completed",
             color: "#ffffff",
@@ -63,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Medical & Health Sciences",
             topic: "COVID-19",
             slrTitle: 'Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
+            journal: "Discover Artificial Intelligence",
             author: "Sai Kiran Gangadari",
             status: "Completed",
             color: "#ffffff",
@@ -72,126 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             category: "Medical & Health Sciences",
-            topic: "Precision Medicine for Aging",
-            slrTitle: '"Efficacy of AI-driven personalized treatment plans for neurodegenerative diseases: A systematic review of clinical outcomes (2021–2026)."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)",
-            icon: "fa-user-doctor"
+            topic: "Geriatric Cancer and Falls",
+            slrTitle: 'Falls among geriatric cancer patients: a systematic review and meta-analysis of prevalence and risk across cancer types',
+            journal: "BMC Geriatrics",
+            author: "Doddolla Lingamaiah",
+            status: "Completed",
+            color: "#ffffff",
+            image: "geriatric_cancer.jpg",
+            icon: "fa-person-cane",
+            link: "https://link.springer.com/article/10.1186/s12877-025-05722-1"
         },
-        {
-            category: "Medical & Health Sciences",
-            topic: "Eco-Anxiety & Public Health",
-            slrTitle: '"The global prevalence of climate-related mental health disorders in youth: Mapping evidence and intervention strategies."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%)",
-            icon: "fa-earth-americas",
-            link: "#"
-        },
-        {
-            category: "Medical & Health Sciences",
-            topic: "Digital Health Equity",
-            slrTitle: '"Barriers to telemedicine adoption in low-resource settings: A systematic analysis of infrastructure vs. cultural literacy."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%)",
-            icon: "fa-mobile-screen-button",
-            link: "#"
-        },
-
-        // 2. Agriculture & Food Science (Greens/Earth Tones)
-        {
-            category: "Agriculture & Food Science",
-            topic: "Climate-Resilient Crops",
-            slrTitle: '"Effectiveness of CRISPR/Cas9 in developing heat-tolerant cereal varieties: A systematic review of field trial successes."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%)",
-            icon: "fa-wheat-awn",
-            link: "#"
-        },
-        {
-            category: "Agriculture & Food Science",
-            topic: "Precision Agriculture (IoT)",
-            slrTitle: '"The impact of IoT-driven \'Real-Time\' soil monitoring on water conservation in arid regions: A global synthesis."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%)",
-            icon: "fa-satellite-dish",
-            link: "#"
-        },
-        {
-            category: "Agriculture & Food Science",
-            topic: "Circular Food Systems",
-            slrTitle: '"Systematic analysis of consumer acceptance vs. nutritional safety of lab-grown meat and insect-based proteins."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)",
-            icon: "fa-recycle",
-            link: "#"
-        },
-        {
-            category: "Agriculture & Food Science",
-            topic: "Post-Harvest Loss",
-            slrTitle: '"The role of AI and blockchain in reducing food waste within global perishable supply chains."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%)",
-            icon: "fa-boxes-packing",
-            link: "#"
-        },
-
-        // 3. Social Sciences (Warm Tones)
-        {
-            category: "Social Sciences",
-            topic: "The Gig Economy 2.0",
-            slrTitle: '"Social security and mental well-being in the platform-based workforce: A systematic review of global labor policy impacts."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%)",
-            icon: "fa-people-carry-box",
-            link: "#"
-        },
-        {
-            category: "Social Sciences",
-            topic: "Misinformation & Democracy",
-            slrTitle: '"The role of generative AI in shaping electoral narratives: A systematic review of digital literacy interventions."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%)",
-            icon: "fa-users-viewfinder",
-            link: "#"
-        },
-        {
-            category: "Social Sciences",
-            topic: "Inclusive Education",
-            slrTitle: '"Impact of VR-based immersive learning on neurodivergent students: A systematic analysis of pedagogical outcomes."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #fffde7 0%, #fff9c4 100%)",
-            icon: "fa-hands-holding-child",
-            link: "#"
-        },
-
-        // 4. General Science & Environment (Purples/Teals)
-        {
-            category: "General Science & Environment",
-            topic: "Green Hydrogen",
-            slrTitle: '"Barriers to scaling green hydrogen for heavy industry: A systematic review of technical vs. economic feasibility."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%)",
-            icon: "fa-industry",
-            link: "#"
-        },
-        {
-            category: "General Science & Environment",
-            topic: "Microplastics in Ecosystems",
-            slrTitle: '"The efficacy of bio-remediation techniques in removing microplastics from marine environments: A systematic evidence map."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%)",
-            icon: "fa-water",
-            link: "#"
-        },
-        {
-            category: "General Science & Environment",
-            topic: "Energy Storage",
-            slrTitle: '"Beyond Lithium-ion: A systematic review of the scalability and environmental impact of Sodium-ion battery technologies."',
-            status: "Upcoming",
-            color: "linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%)",
-            icon: "fa-battery-full",
-            link: "#"
-        }
     ];
     // -------------------------
 
@@ -219,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h4 class="card-topic">${item.topic}</h4>
                         <p class="card-slr-title">${item.slrTitle}</p>
                         ${item.author ? `<p class="card-author">${item.author}</p>` : ''}
+                        ${item.journal ? `<p class="card-journal"><i class="fa-regular fa-newspaper"></i> ${item.journal}</p>` : ''}
                         ${item.status === 'Completed' && item.link ? `
                         <div class="card-action">
                             <span>Read Full Article</span>
@@ -239,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4 class="card-topic">${item.topic}</h4>
                 <p class="card-slr-title">${item.slrTitle}</p>
                 ${item.author ? `<p class="card-author">${item.author}</p>` : ''}
+                ${item.journal ? `<p class="card-journal"><i class="fa-regular fa-newspaper"></i> ${item.journal}</p>` : ''}
                 ${item.status === 'Completed' && item.link ? `
                 <div class="card-action">
                     <span>Read Full Article</span>
@@ -314,6 +210,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 "GCP and research ethics training",
                 "Career development counseling",
                 "Grant writing masterclasses"
+            ]
+        },
+        6: {
+            title: "eCRFs, Apps & Data Collection Forms",
+            description: "End-to-end design and development of electronic data capture tools — from simple data collection forms to fully customised eCRFs and lightweight clinical apps.",
+            list: [
+                "Custom eCRF design and build",
+                "Simple web & mobile apps for clinical data capture",
+                "Patient-facing and investigator-facing data collection forms",
+                "REDCap, KoBoToolbox & custom platform setup",
+                "Offline-capable forms for low-connectivity settings"
             ]
         }
     };
@@ -464,66 +371,85 @@ document.addEventListener('DOMContentLoaded', () => {
         function toggleAboutUs(e) {
             if(e) e.preventDefault();
             
-            // Close other sections if open
+            // Close other sections
             if (servicesSection && servicesSection.classList.contains('open')) {
                 servicesSection.classList.remove('open');
+                document.querySelectorAll('a[href="#our-services"]').forEach(l => l.classList.remove('nav-active'));
             }
             if (subjectSection && subjectSection.classList.contains('open')) {
                 subjectSection.classList.remove('open');
+                document.querySelectorAll('a[href="#subject-coverage"]').forEach(l => l.classList.remove('nav-active'));
             }
 
             aboutUsSection.classList.toggle('open');
+            const isOpen = aboutUsSection.classList.contains('open');
+            document.querySelectorAll('a[href="#about-us"]').forEach(l => l.classList.toggle('nav-active', isOpen));
             
-            if (aboutUsSection.classList.contains('open')) {
-                 aboutUsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isOpen) {
+                aboutUsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
         attachToggleListeners('a[href="#about-us"]', toggleAboutUs);
+        // Close button inside the section
+        const closeAbout = aboutUsSection.querySelector('.section-close-btn');
+        if (closeAbout) closeAbout.addEventListener('click', toggleAboutUs);
     }
 
     if (servicesSection) {
         function toggleServices(e) {
             if(e) e.preventDefault();
 
-            // Close other sections if open
+            // Close other sections
             if (aboutUsSection && aboutUsSection.classList.contains('open')) {
                 aboutUsSection.classList.remove('open');
+                document.querySelectorAll('a[href="#about-us"]').forEach(l => l.classList.remove('nav-active'));
             }
             if (subjectSection && subjectSection.classList.contains('open')) {
                 subjectSection.classList.remove('open');
+                document.querySelectorAll('a[href="#subject-coverage"]').forEach(l => l.classList.remove('nav-active'));
             }
 
             servicesSection.classList.toggle('open');
+            const isOpen = servicesSection.classList.contains('open');
+            document.querySelectorAll('a[href="#our-services"]').forEach(l => l.classList.toggle('nav-active', isOpen));
             
-            if (servicesSection.classList.contains('open')) {
-                 servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isOpen) {
+                servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
         attachToggleListeners('a[href="#our-services"]', toggleServices);
+        const closeServices = servicesSection.querySelector('.section-close-btn');
+        if (closeServices) closeServices.addEventListener('click', toggleServices);
     }
 
     if (subjectSection) {
         function toggleSubject(e) {
             if(e) e.preventDefault();
 
-            // Close other sections if open
+            // Close other sections
             if (aboutUsSection && aboutUsSection.classList.contains('open')) {
                 aboutUsSection.classList.remove('open');
+                document.querySelectorAll('a[href="#about-us"]').forEach(l => l.classList.remove('nav-active'));
             }
             if (servicesSection && servicesSection.classList.contains('open')) {
                 servicesSection.classList.remove('open');
+                document.querySelectorAll('a[href="#our-services"]').forEach(l => l.classList.remove('nav-active'));
             }
 
             subjectSection.classList.toggle('open');
+            const isOpen = subjectSection.classList.contains('open');
+            document.querySelectorAll('a[href="#subject-coverage"]').forEach(l => l.classList.toggle('nav-active', isOpen));
             
-            if (subjectSection.classList.contains('open')) {
-                 subjectSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isOpen) {
+                subjectSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
         attachToggleListeners('a[href="#subject-coverage"]', toggleSubject);
+        const closeSubject = subjectSection.querySelector('.section-close-btn');
+        if (closeSubject) closeSubject.addEventListener('click', toggleSubject);
     }
 
     // Check URL hash on load and open corresponding section
