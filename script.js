@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: "#ffffff",
             image: "hcv_liver.jpeg",
             icon: "fa-virus",
-            link: "https://onlinelibrary.wiley.com/journal/10969071"
+            link: "https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.24849"
         },
         {
             category: "Medical & Health Sciences",
