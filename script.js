@@ -25,7 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const updatesData = [
-        // 1. Medical & Health Sciences (Light Blue/Cyan Gradients)
+        {
+            category: "Medical & Health Sciences",
+            topic: "Falls in Geriatric Cancer Patients",
+            slrTitle: 'Falls among geriatric cancer patients: a systematic review and meta-analysis of prevalence and risk across cancer types',
+            journal: "BMC Geriatrics",
+            author: "Doddolla Lingamaiah",
+            status: "Completed",
+            color: "#ffffff",
+            image: "geriatric_cancer.jpg",
+            icon: "fa-person-cane",
+            link: "https://link.springer.com/article/10.1186/s12877-025-05722-1"
+        },
         {
             category: "Medical & Health Sciences",
             topic: "Deprescribing",
@@ -33,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             journal: "British Journal of Clinical Pharmacology",
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
-            color: "#ffffff", // Will be overridden by image if present
+            color: "#ffffff",
             image: "deprescribing.jpg",
             icon: "fa-pills",
             link: "https://bpspubs.onlinelibrary.wiley.com/doi/10.1002/bcp.70319"
@@ -52,6 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             category: "Medical & Health Sciences",
+            topic: "COVID-19",
+            slrTitle: 'Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
+            journal: "Discover Artificial Intelligence",
+            author: "Sai Kiran G",
+            status: "Completed",
+            color: "#ffffff",
+            image: "covid_ai.jpg",
+            icon: "fa-virus-covid",
+            link: "https://link.springer.com/article/10.1007/s44163-025-00625-x"
+        },
+        {
+            category: "Medical & Health Sciences",
             topic: "Sickle Cell Disease",
             slrTitle: 'IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
             journal: "Journal of Chemical Health Risks",
@@ -64,27 +87,63 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             category: "Medical & Health Sciences",
-            topic: "COVID-19",
-            slrTitle: 'Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
-            journal: "Discover Artificial Intelligence",
-            author: "Sai Kiran Gangadari",
+            topic: "Chronic Hepatitis C",
+            slrTitle: 'rs2230201 polymorphism may dictate complement C3 levels and response to treatment in chronic hepatitis C patients',
+            journal: "Journal of Viral Hepatitis",
+            author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff",
-            image: "covid_ai.jpg",
-            icon: "fa-virus-covid",
-            link: "https://doi.org/10.1007/s44163-025-00625-x"
+            image: "hepatitis_c.jpeg",
+            icon: "fa-virus",
+            link: "https://onlinelibrary.wiley.com/doi/10.1111/jvh.12280?msockid=07af26db8e8a6aa6299330fd8fe86b4f"
         },
         {
             category: "Medical & Health Sciences",
-            topic: "Falls in Geriatric Cancer Patients",
-            slrTitle: 'Falls among geriatric cancer patients: a systematic review and meta-analysis of prevalence and risk across cancer types',
-            journal: "BMC Geriatrics",
-            author: "Doddolla Lingamaiah",
+            topic: "Chronic Hepatitis C",
+            slrTitle: 'Role of complement component C4 in treatment response and disease progression in chronic hepatitis C patients',
+            journal: "Journal of Viral Hepatitis",
+            author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff",
-            image: "geriatric_cancer.jpg",
-            icon: "fa-person-cane",
-            link: "https://link.springer.com/article/10.1186/s12877-025-05722-1"
+            image: "hepatitis_virus.jpeg",
+            icon: "fa-virus",
+            link: "https://onlinelibrary.wiley.com/doi/abs/10.1111/jvh.12383"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "Chronic Hepatitis C",
+            slrTitle: 'Down regulation of TRIF, TLR3, and MAVS in HCV infected liver correlates with the outcome of infection',
+            journal: "Journal of Medical Virology",
+            author: "Dr. Vijaya Kumar Karra",
+            status: "Completed",
+            color: "#ffffff",
+            image: "hcv_liver.jpeg",
+            icon: "fa-virus",
+            link: "https://onlinelibrary.wiley.com/journal/10969071"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "Hepatitis B",
+            slrTitle: 'IL-18 polymorphisms in hepatitis B virus related liver disease',
+            journal: "Cytokine",
+            author: "Dr. Vijaya Kumar Karra",
+            status: "Completed",
+            color: "#ffffff",
+            image: "hepatitis_b.jpeg",
+            icon: "fa-virus",
+            link: "https://www.sciencedirect.com/science/article/abs/pii/S1043466615000745"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "HBsAg Titres and HBV DNA",
+            slrTitle: 'Clinical Significance of Quantitative HBsAg Titres and its Correlation With HBV DNA Levels in the Natural History of Hepatitis B Virus Infection',
+            journal: "Journal of Clinical and Experimental Hepatology (JCEH)",
+            author: "Dr. Vijaya Kumar Karra",
+            status: "Completed",
+            color: "#ffffff",
+            image: "hbsag_test.jpeg",
+            icon: "fa-vial",
+            link: "https://www.sciencedirect.com/science/article/abs/pii/S0973688316303036"
         },
     ];
     // -------------------------
