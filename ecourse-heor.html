@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCourse on Health Economics and Outcomes Research (HEOR) – HealthValue Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ── Hero ── */
+        .course-hero {
+            background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)), url('heor_card.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .course-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        .course-hero .breadcrumb {
+            margin-top: 16px;
+            position: relative;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+        .course-hero .breadcrumb a {
+            color: #2a9d8f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .course-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Page layout ── */
+        .course-section {
+            background: #f4f7fb;
+            padding: 40px 0 80px;
+        }
+        
+        .course-alert {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 18px 24px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .course-alert h3 {
+            color: #856404;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .course-alert p {
+            color: #856404;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .course-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 36px;
+            align-items: start;
+        }
+        @media (max-width: 900px) {
+            .course-layout { grid-template-columns: 1fr; }
+            .course-sidebar { order: -1; }
+        }
+
+        /* ── Main Content ── */
+        .course-content-block {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            margin-bottom: 24px;
+            border: 1px solid #eef2f7;
+        }
+        .course-section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f4f8;
+        }
+        .course-content-block p {
+            font-size: 0.98rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+        .course-list {
+            padding-left: 20px;
+            color: #4a5568;
+        }
+        .course-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* Modules List */
+        .modules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .module-item {
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+        }
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .module-number {
+            width: 32px;
+            height: 32px;
+            background: #2a9d8f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .module-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .module-sublist {
+            list-style: none;
+            padding-left: 47px;
+            margin: 0;
+        }
+        .module-sublist li {
+            font-size: 0.92rem;
+            color: #4a5568;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .module-sublist li::before {
+            content: '•';
+            position: absolute;
+            left: -15px;
+            color: #2a9d8f;
+            font-weight: bold;
+        }
+
+        /* ── Sidebar ── */
+        .course-sidebar {
+            position: sticky;
+            top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 24px;
+            border: 1px solid #eef2f7;
+        }
+        .sidebar-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4f8;
+        }
+
+        /* Action Card */
+        .btn-apply, .btn-download, .btn-apply-full {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s;
+            margin-bottom: 12px;
+            text-decoration: none;
+        }
+        .btn-apply, .btn-apply-full {
+            background: linear-gradient(135deg, var(--primary-color), #1a3a5c);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(26,58,92,0.25);
+        }
+        .btn-apply:hover, .btn-apply-full:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26,58,92,0.35);
+        }
+        .btn-download {
+            background: #2a9d8f;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(42,157,143,0.25);
+        }
+        .btn-download:hover {
+            background: #21867a;
+            transform: translateY(-2px);
+        }
+
+        /* Info Card */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            font-size: 0.92rem;
+            color: #4a5568;
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        .info-list li strong {
+            color: var(--primary-color);
+        }
+
+        /* Contact Card */
+        .contact-card p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+        .contact-card p i {
+            color: #2a9d8f;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img">
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#about-us">About Us</a>
+            <a href="index.html#our-services">Services</a>
+            <a href="index.html#subject-coverage">Subject</a>
+            <a href="blog.html">Insights</a>
+            <a href="publications.html">Publications</a>
+            <a href="ecourses.html" class="nav-ecourses" style="color:#2a9d8f;font-weight:700;">eCourse Programs</a>
+        </div>
+        <a href="contact.html" class="btn-contact">Contact Us</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="course-hero">
+    <div class="container hero-content">
+        <h1><i class="fa-solid fa-graduation-cap" style="font-size:2rem;vertical-align:middle;margin-right:10px;"></i>eCourse on Health Economics and Outcomes Research (HEOR)</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="ecourses.html">eCourse Programs</a> &nbsp;/&nbsp; eCourse on HEOR
+        </div>
+    </div>
+</header>
+
+<!-- Course Section -->
+<section class="course-section">
+    <div class="container">
+        
+        <!-- Admissions Alert -->
+        <div class="course-alert">
+            <h3><i class="fa-solid fa-bullhorn"></i> Admissions Open for June 2026 Batch</h3>
+            <p><strong>Course Commencement:</strong> 1 June 2026</p>
+        </div>
+
+        <div class="course-layout">
+            <!-- LEFT: Main Content -->
+            <div class="course-main">
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Background</h2>
+                    <p>Health Economics and Outcomes Research (HEOR) is an increasingly critical field that supports evidence-based healthcare decision-making by evaluating the economic, clinical, and humanistic value of healthcare interventions. With the growing complexity of healthcare systems, rising healthcare expenditures, and increased demand for cost-effective therapies, there is a pressing need for professionals trained in pharmacoeconomics, health technology assessment (HTA), real-world evidence (RWE), market access, and patient-centered outcomes research.</p>
+                    <p>A substantial pool of healthcare professionals, pharmacists, clinicians, public health specialists, researchers, pharmaceutical professionals, policy experts, and academicians exists globally, yet formal HEOR training opportunities remain limited, particularly in accessible, flexible, and practice-oriented formats.</p>
+                    <p>The eCourse in Health Economics and Outcomes Research is designed to bridge this educational gap by offering structured multidisciplinary training through an online learning platform. This course provides participants with foundational and applied knowledge in health economic evaluation, outcomes research, reimbursement strategy, and healthcare policy. Delivered over a duration of three months, the program combines self-paced learning, expert-led sessions, practical assignments, and industry-oriented projects to support learners in advancing their professional careers while balancing existing commitments.</p>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Aim</h2>
+                    <p>The aim of this course is to provide participants with comprehensive interdisciplinary training in Health Economics and Outcomes Research to strengthen their ability to evaluate healthcare interventions, generate economic evidence, inform policy decisions, and contribute effectively to pharmaceutical, healthcare, and public health sectors.</p>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Learning Objectives</h2>
+                    <p>By the end of the course, the participant should be able to:</p>
+                    <ul class="course-list">
+                        <li>Understand the fundamental concepts and scope of Health Economics and Outcomes Research</li>
+                        <li>Apply pharmacoeconomic principles including cost-minimization, cost-effectiveness, cost-utility, and cost-benefit analyses</li>
+                        <li>Interpret and conduct health economic evaluations for healthcare interventions</li>
+                        <li>Analyze healthcare costs, reimbursement frameworks, and budget impact models</li>
+                        <li>Understand and utilize real-world evidence and patient-reported outcomes data</li>
+                        <li>Develop and critically evaluate Health Technology Assessment (HTA) frameworks</li>
+                        <li>Understand market access strategies, pricing, and reimbursement pathways</li>
+                        <li>Design HEOR studies and interpret outcomes data for policy and industry applications</li>
+                        <li>Present HEOR findings in professional reports, value dossiers, and scientific manuscripts</li>
+                    </ul>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Course Design and Duration</h2>
+                    <p>The course is designed as a three-month eCourse delivered through an advanced web-based learning platform. It is a flexible online program that combines:</p>
+                    <ul class="course-list">
+                        <li>Self-paced modular learning</li>
+                        <li>Live virtual expert lectures</li>
+                        <li>Recorded sessions</li>
+                        <li>Practical assignments and projects</li>
+                        <li>Interactive case studies</li>
+                        <li>Assessments and quizzes</li>
+                        <li>Downloadable learning materials</li>
+                    </ul>
+                    <p>This blended teaching model allows participants to learn efficiently while accommodating professional and academic commitments.</p>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Eligibility Criteria</h2>
+                    <p>The course is open to the following candidates:</p>
+                    <ul class="course-list">
+                        <li>PharmD / BPharm / MPharm graduates</li>
+                        <li>Medical students and clinicians</li>
+                        <li>Public health professionals</li>
+                        <li>Biostatisticians and epidemiologists</li>
+                        <li>Health policy researchers</li>
+                        <li>Pharmaceutical industry professionals</li>
+                        <li>Clinical research associates</li>
+                        <li>Market access professionals</li>
+                        <li>Regulatory affairs specialists</li>
+                        <li>Biotechnology and life sciences graduates</li>
+                        <li>PhD scholars and academicians</li>
+                        <li>Healthcare administrators</li>
+                        <li>Professionals interested in health policy, pricing, reimbursement, and outcomes research</li>
+                    </ul>
+                    <p>Eligible candidates may be screened based on their online application and statement of purpose where applicable.</p>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Teaching Methodology</h2>
+                    <p>The course will be delivered using a blended online learning model through a dedicated eLearning platform. The methodology includes:</p>
+                    <ul class="course-list">
+                        <li>Interactive online modules</li>
+                        <li>Faculty-led virtual lectures</li>
+                        <li>Industry case studies</li>
+                        <li>Pharmacoeconomic modeling workshops</li>
+                        <li>Budget impact simulations</li>
+                        <li>Real-world evidence data exercises</li>
+                        <li>Reading assignments from key HEOR literature</li>
+                        <li>Discussion forums</li>
+                        <li>Capstone project development</li>
+                    </ul>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Evaluation and Certificate</h2>
+                    <p>Participants will be evaluated through:</p>
+                    <ul class="course-list">
+                        <li>Module-based assessments</li>
+                        <li>Weekly quizzes</li>
+                        <li>Practical assignments</li>
+                        <li>Capstone HEOR project</li>
+                        <li>Final online examination</li>
+                    </ul>
+                    <p>An online certificate in Health Economics and Outcomes Research (HEOR) will be awarded to participants who successfully complete all course requirements.</p>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Course Fee</h2>
+                    <ul class="course-list">
+                        <li><strong>Program Fee (Indian):</strong> 20,000 INR</li>
+                        <li><strong>Program Fee (South Asian Candidates):</strong> 220 USD</li>
+                        <li><strong>Program Fee (Other International Candidates):</strong> 330 USD</li>
+                    </ul>
+                    <p>The course fee is inclusive of:</p>
+                    <ul class="course-list">
+                        <li>Full course access</li>
+                        <li>Live and recorded sessions</li>
+                        <li>Study materials</li>
+                        <li>Assignments</li>
+                        <li>Final examination</li>
+                        <li>Certification</li>
+                        <li>Project mentorship</li>
+                    </ul>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Course Modules</h2>
+                    <p>The course follows a structured module-based learning approach over three months.</p>
+                    
+                    <div class="modules-list">
+                        <div class="module-item">
+                            <div class="module-header">
+                                <div class="module-number">1</div>
+                                <div class="module-title">Foundations of HEOR & Research Methodology</div>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #718096; margin: -10px 0 10px 47px; font-style: italic;">Build a strong conceptual and methodological base in outcomes research.</p>
+                            <ul class="module-sublist">
+                                <li>Introduction to HEOR and its role in healthcare decision-making</li>
+                                <li>Research methodology and study design frameworks used in HEOR</li>
+                                <li>Overview of real-world evidence (RWE) and its applications</li>
+                                <li>Fundamentals of biostatistics relevant to healthcare research</li>
+                                <li>Key statistical concepts applied in outcomes and economic studies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module-item">
+                            <div class="module-header">
+                                <div class="module-number">2</div>
+                                <div class="module-title">Evidence Synthesis & Systematic Literature Review (SLR)</div>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #718096; margin: -10px 0 10px 47px; font-style: italic;">Develop expertise in structured evidence generation and critical appraisal.</p>
+                            <ul class="module-sublist">
+                                <li>Introduction to Systematic Literature Reviews (SLR) and their importance in HEOR</li>
+                                <li>Step-by-step process for conducting high-quality systematic reviews</li>
+                                <li>Designing search strategies and database navigation (PubMed training)</li>
+                                <li>Critical appraisal of clinical evidence and risk-of-bias assessment</li>
+                                <li>Application of SLR in clinical and outcomes research</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <div class="module-header">
+                                <div class="module-number">3</div>
+                                <div class="module-title">Economic Evaluation, PROs & Health Technology Assessment (HTA)</div>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #718096; margin: -10px 0 10px 47px; font-style: italic;">Learn how evidence translates into value, access, and policy decisions.</p>
+                            <ul class="module-sublist">
+                                <li>Principles of pharmacoeconomics and economic evaluation methods (CEA, CUA, CBA)</li>
+                                <li>Cost-effectiveness analysis and health economic modeling</li>
+                                <li>Understanding and analyzing patient-reported outcomes (PROs)</li>
+                                <li>Introduction to Health Technology Assessment (HTA) frameworks</li>
+                                <li>Role of HTA agencies in pricing, reimbursement, and policy decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Career Opportunities</h2>
+                    <p>Graduates of this course may pursue professional opportunities as:</p>
+                    <ul class="course-list">
+                        <li>HEOR Analyst</li>
+                        <li>Pharmacoeconomics Specialist</li>
+                        <li>Market Access Associate</li>
+                        <li>Medical Writer</li>
+                        <li>Health Policy Researcher</li>
+                        <li>Outcomes Research Consultant</li>
+                        <li>Pricing and Reimbursement Analyst</li>
+                        <li>Regulatory Affairs Specialist</li>
+                    </ul>
+                </div>
+
+                <div class="course-content-block">
+                    <h2 class="course-section-title">Why Choose This Course?</h2>
+                    <ul class="course-list">
+                        <li>Industry-relevant curriculum</li>
+                        <li>Flexible online learning</li>
+                        <li>Practical HEOR tools and techniques</li>
+                        <li>Global career relevance</li>
+                        <li>Expert faculty guidance</li>
+                        <li>Certification for professional advancement</li>
+                        <li>Suitable for both beginners and professionals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT: Sidebar -->
+            <div class="course-sidebar">
+                <div class="sidebar-card">
+                    <h3>Interested?</h3>
+                    <div class="sidebar-buttons">
+                        <a href="#" class="btn-apply-full" onclick="openApplyModal('eCourse on HEOR')"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+                        <a href="brochure-heor.html" class="btn-download"><i class="fa-solid fa-file-arrow-down"></i> Download Complete Prospectus</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Course Information</h3>
+                    <ul class="info-list">
+                        <li><strong>Format:</strong> <span>100% Online</span></li>
+                        <li><strong>Duration:</strong> <span>3 Months</span></li>
+                        <li><strong>Language:</strong> <span>English</span></li>
+                        <li><strong>Next Batch:</strong> <span>June 2026</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Course Fee</h3>
+                    <ul class="info-list">
+                        <li><strong>Indian Nationals:</strong> <span>20,000 INR</span></li>
+                        <li><strong>South Asian:</strong> <span>220 USD</span></li>
+                        <li><strong>International:</strong> <span>330 USD</span></li>
+                    </ul>
+                    <p style="font-size: 0.85rem; color: #718096; margin-top: 15px; line-height: 1.4;">
+                        Fee includes full access, live/recorded sessions, materials, assignments, exam, certification, and mentorship.
+                    </p>
+                </div>
+
+                <div class="sidebar-card contact-card">
+                    <h3>Course Coordinators</h3>
+                    <p><strong>Dr. Varun Chaithanya Gurram</strong></p>
+                    <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 8px;">Senior Manager - eLearning<br>HealthValue Analytics</p>
+                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:healthvalue.connect@gmail.com">healthvalue.connect@gmail.com</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="logo.png" alt="HealthValue Analytics" class="logo-img-footer">
+            </div>
+            <div class="office-info">
+                <h4><i class="fa-solid fa-location-dot"></i> India Office</h4>
+                <p>Bibinagar, Near AIIMS,<br>Bibinagar, 508126<br>
+                Email: <a href="mailto:healthvalueanalytics@gmail.com" class="footer-email">healthvalueanalytics@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#about-us">About Us</a></li>
+                <li><a href="index.html#our-services">Services</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="ecourses.html">eCourse Programs</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Connect With Us</h3>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="work-with-us">
+                <h3>Work With Us</h3>
+                <p>Explore our <a href="careers.html" class="career-link">CAREERS</a> page.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<!-- Apply Now Modal -->
+<div class="modal-overlay" id="apply-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="close-apply" aria-label="Close modal">&times;</button>
+        
+        <div class="modal-header">
+            <h2>Course Application</h2>
+            <p class="modal-subtitle">Home / eCourse Programs / <strong>eCourse on HEOR</strong></p>
+        </div>
+
+        <div class="form-progress">
+            <div class="progress-step active" data-step="1"></div>
+            <div class="progress-step" data-step="2"></div>
+            <div class="progress-step" data-step="3"></div>
+        </div>
+        
+        <form id="apply-form" class="apply-form">
+            <!-- Step 1: Personal Details -->
+            <div class="form-step active" data-step="1">
+                <div class="form-section-title">
+                    <i class="fa-solid fa-user"></i> Personal Information
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="As per official documents" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91-XXXXX-XXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-grid" style="gap:10px; grid-template-columns: 1fr 1fr;">
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" name="age" min="18" max="100" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label for="sex">Sex *</label>
+                                <select id="sex" name="sex" required>
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address">Full Residential Address *</label>
+                        <textarea id="address" name="address" rows="2" placeholder="Street, City, State, ZIP, Country" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Education Details -->
+            <div class="form-step" data-step="2">
+                <div class="form-section-title">
+                    <i class="fa-solid fa-user-graduate"></i> Academic Background
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="highest-degree">Highest Qualification *</label>
+                        <input type="text" id="highest-degree" name="highest-degree" placeholder="e.g., PharmD, MBBS, PhD" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization">Specialization / Major *</label>
+                        <input type="text" id="specialization" name="specialization" placeholder="e.g., Pharmacology, Public Health" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">University / Institute *</label>
+                        <input type="text" id="university" name="university" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year-passing">Year of Passing *</label>
+                        <input type="number" id="year-passing" name="year-passing" min="1950" max="2026" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Professional Details & Others -->
+            <div class="form-step" data-step="3">
+                <div class="form-section-title">
+                    <i class="fa-solid fa-briefcase"></i> Professional Details
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="occupation">Current Occupation *</label>
+                        <input type="text" id="occupation" name="occupation" placeholder="e.g., Student, Researcher, Manager" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience (if any)</label>
+                        <input type="number" id="experience" name="experience" min="0" step="0.5">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sop">Statement of Purpose</label>
+                        <textarea id="sop" name="sop" rows="3" placeholder="Briefly describe why you want to take this course..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-navigation">
+                <button type="button" class="btn-prev" id="prev-step" style="display:none;"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <button type="button" class="btn-next" id="next-step">Next <i class="fa-solid fa-arrow-right"></i></button>
+                <button type="submit" class="btn-submit-app" id="submit-form" style="display:none;">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </form>
+        
+        <!-- Success State (Hidden by default) -->
+        <div id="success-state" class="success-message" style="display:none;">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Application Received!</h3>
+            <p>Thank you for applying. Your details have been recorded in our database. Our course coordinator will review your application and contact you via email shortly.</p>
+            <button type="button" class="btn-next" onclick="closeApplyModal()" style="margin-top:20px; max-width:200px; margin-inline:auto;">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- CONFIGURATION ---
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwUzDmlxViAQo30fEmtDZW32EE8nqDsciKH1loOv4WlvmsYuihhl2FE0Ra2uIc1aPp/exec';
+
+    // Navigation Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks   = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    }
+
+    // Modal Logic
+    const applyModal = document.getElementById('apply-modal');
+    const closeApply = document.getElementById('close-apply');
+    const applyForm  = document.getElementById('apply-form');
+    const applyBtns  = document.querySelectorAll('.btn-apply');
+    const successState = document.getElementById('success-state');
+
+    // Multi-step Logic
+    let currentStep = 1;
+    const totalSteps = 3;
+    const steps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    const btnNext = document.getElementById('next-step');
+    const btnPrev = document.getElementById('prev-step');
+    const btnSubmit = document.getElementById('submit-form');
+
+    function updateStep() {
+        steps.forEach(step => step.classList.remove('active'));
+        progressSteps.forEach((p, idx) => {
+            p.classList.remove('active', 'completed');
+            if (idx + 1 === currentStep) p.classList.add('active');
+            if (idx + 1 < currentStep) p.classList.add('completed');
+        });
+        document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+        // Update buttons
+        btnPrev.style.display = currentStep === 1 ? 'none' : 'flex';
+        if (currentStep === totalSteps) {
+            btnNext.style.display = 'none';
+            btnSubmit.style.display = 'flex';
+        } else {
+            btnNext.style.display = 'flex';
+            btnSubmit.style.display = 'none';
+        }
+    }
+
+    btnNext.addEventListener('click', () => {
+        const currentInputs = steps[currentStep-1].querySelectorAll('input[required], select[required], textarea[required]');
+        let valid = true;
+        currentInputs.forEach(input => {
+            if (!input.value) {
+                input.style.borderColor = '#ef4444';
+                valid = false;
+            } else {
+                input.style.borderColor = '';
+            }
+        });
+
+        if (valid && currentStep < totalSteps) {
+            currentStep++;
+            updateStep();
+        }
+    });
+
+    btnPrev.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateStep();
+        }
+    });
+
+    // Modal Handlers
+    function openApplyModal() {
+        applyModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // Reset to step 1
+        currentStep = 1;
+        updateStep();
+        applyForm.style.display = 'block';
+        successState.style.display = 'none';
+    }
+
+    function closeApplyModal() {
+        applyModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    applyBtns.forEach(btn => btn.addEventListener('click', openApplyModal));
+    closeApply.addEventListener('click', closeApplyModal);
+    applyModal.addEventListener('click', (e) => {
+        if (e.target === applyModal) closeApplyModal();
+    });
+
+    // Form Submission (Automated)
+    applyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submit-form');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+
+        const formData = new FormData(applyForm);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Prepare payload
+        const payload = {
+            subject: `Application: HEOR Course - ${data['full-name']}`,
+            ...data,
+            course: 'Health Economics and Outcomes Research (HEOR)',
+            source: 'HEOR Application Form'
+        };
+
+        // Send to Google Apps Script
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            // Show success state
+            applyForm.style.display = 'none';
+            successState.style.display = 'block';
+            applyForm.reset();
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('There was an error submitting your application. Please check your internet connection and try again.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        });
+    });
+</script>
+</body>
+</html>

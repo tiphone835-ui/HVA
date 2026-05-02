@@ -1,3 +1,6 @@
+// --- CONFIGURATION ---
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwUzDmlxViAQo30fEmtDZW32EE8nqDsciKH1loOv4WlvmsYuihhl2FE0Ra2uIc1aPp/exec';
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- EDIT UPDATES HERE ---
     
@@ -367,28 +370,49 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('open');
     }
 
-    // Handle Form Submission (Mailto)
+    // Handle Form Submission (Automated)
     enquiryForm.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        const submitBtn = enquiryForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
         // Get values
-        const name = enquiryForm.querySelector('input[placeholder="Full Name"]').value;
-        const email = enquiryForm.querySelector('input[placeholder="Email Address"]').value; // Not used in mailto destination, but good to have
-        const phone = enquiryForm.querySelector('input[placeholder="Phone"]').value;
-        const subject = enquiryForm.querySelector('input[placeholder="Subject"]').value;
-        const message = enquiryForm.querySelector('textarea').value;
+        const formData = {
+            subject: enquiryForm.querySelector('input[placeholder="Subject"]').value,
+            name: enquiryForm.querySelector('input[placeholder="Full Name"]').value,
+            email: enquiryForm.querySelector('input[placeholder="Email Address"]').value,
+            phone: enquiryForm.querySelector('input[placeholder="Phone"]').value,
+            message: enquiryForm.querySelector('textarea').value,
+            source: 'Website Enquiry Form'
+        };
 
-        // Construct Email Body
-        const bodyContent = `Name: ${name}\r\nPhone: ${phone}\r\nEmail: ${email}\r\n\r\nMessage:\r\n${message}`;
-        
-        // Construct Mailto Link
-        const mailtoLink = `mailto:healthvalueanalytics@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
-
-        // Open Email Client
-        window.location.href = mailtoLink;
-
-        // Optional: Close modal after a delay or immediately
-        setTimeout(closeModal, 1000);
+        // Send to Google Apps Script
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Essential for Google Apps Script
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+        .then(() => {
+            // Since we use no-cors, we won't get a readable response, but usually successful if it doesn't catch
+            alert('Thank you! Your enquiry has been recorded. We will get back to you soon.');
+            enquiryForm.reset();
+            closeModal();
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('There was an error sending your message. Please try again later.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        });
     });
 
     // Event Delegation for "Enquire Now" buttons (since they are created dynamically)

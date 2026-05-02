@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCourse Programs – HealthValue Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ── Hero ── */
+        .course-hero {
+            background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)), url('ecourse_hero.jpg.jpeg.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+        .course-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        .course-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ── Course Grid ── */
+        .listing-section {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .section-header .divider {
+            width: 60px;
+            height: 4px;
+            background: #2a9d8f;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #edf2f7;
+            display: flex;
+            flex-direction: column;
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #2a9d8f;
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #2a9d8f;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .card-badge.upcoming {
+            background: #718096;
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .card-content p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            padding-top: 15px;
+            border-top: 1px solid #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .card-meta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .course-meta {
+            font-size: 0.85rem;
+            color: #718096;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-view, .btn-apply-small {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-view {
+            background: #f0f4f8;
+            color: var(--primary-color);
+            border: 1px solid #e2e8f0;
+        }
+        .btn-view:hover {
+            background: #e2e8f0;
+        }
+        .btn-apply-small {
+            background: #2a9d8f;
+            color: #fff;
+            border: 1px solid #2a9d8f;
+        }
+        .btn-apply-small:hover {
+            background: #21867a;
+            transform: translateY(-1px);
+        }
+        .btn-disabled {
+            color: #a0aec0;
+            cursor: not-allowed;
+            font-weight: 600;
+        }
+
+        .course-meta {
+            font-size: 0.85rem;
+            color: #718096;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img">
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#about-us">About Us</a>
+            <a href="index.html#our-services">Services</a>
+            <a href="index.html#subject-coverage">Subject</a>
+            <a href="blog.html">Insights</a>
+            <a href="publications.html">Publications</a>
+            <a href="ecourses.html" class="nav-ecourses" style="color:#2a9d8f;font-weight:700;">eCourse Programs</a>
+        </div>
+        <a href="contact.html" class="btn-contact">Contact Us</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="course-hero">
+    <div class="container hero-content">
+        <h1>Certificate eCourses</h1>
+        <p>Advance your career with our specialized online programs designed for healthcare professionals and researchers.</p>
+    </div>
+</header>
+
+<!-- Course Grid Section -->
+<section class="listing-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Available Programs</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="course-grid">
+            <!-- Course 1 -->
+            <div class="course-card">
+                <div class="card-image" style="background-image: url('heor_card.jpg');">
+                    <span class="card-badge">Open</span>
+                </div>
+                <div class="card-content">
+                    <h3>eCourse on Health Economics and Outcomes Research (HEOR)</h3>
+                    <p>Gain foundational and applied knowledge in health economic evaluation, outcomes research, and healthcare policy in this 3-month program.</p>
+                    <div class="card-footer">
+                        <div class="card-meta-group">
+                            <div class="course-meta"><i class="fa-regular fa-clock"></i> 3 Months</div>
+                            <div class="course-meta" style="font-weight: 600; color: var(--primary-color);">
+                                <i class="fa-solid fa-tags"></i> Fee: 20,000 INR | 220 USD | 330 USD
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="ecourse-heor.html" class="btn-view">View Course</a>
+                            <a href="#" class="btn-apply-small">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <div class="card-image" style="background-image: url('pv_banner.jpg.jpeg');">
+                    <span class="card-badge">Open</span>
+                </div>
+                <div class="card-content">
+                    <h3>eCourse on Pharmacovigilance (PV)</h3>
+                    <p>Comprehensive multidisciplinary training in pharmacovigilance principles, regulatory frameworks, drug safety operations, and industry practices.</p>
+                    <div class="card-footer">
+                        <div class="card-meta-group">
+                            <div class="course-meta"><i class="fa-regular fa-clock"></i> 3 Months</div>
+                            <div class="course-meta" style="font-weight: 600; color: var(--primary-color);">
+                                <i class="fa-solid fa-tags"></i> Fee: 20,000 INR | 220 USD | 320 USD
+                            </div>
+                        </div>
+                        <div class="card-buttons">
+                            <a href="ecourse-pv.html" class="btn-view">View Course</a>
+                            <a href="#" class="btn-apply-small">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 (Coming Soon) -->
+            <div class="course-card">
+                <div class="card-image" style="background-image: url('ra_card.jpg.jpeg');">
+                    <span class="card-badge upcoming">Coming Soon</span>
+                </div>
+                <div class="card-content">
+                    <h3>eCourse on Pharmaceutical Regulatory Affairs</h3>
+                    <p>Master the essentials of global regulatory frameworks, drug approval processes, and compliance standards for the pharmaceutical industry.</p>
+                    <div class="card-footer">
+                        <div class="card-meta-group">
+                            <div class="course-meta"><i class="fa-regular fa-clock"></i> Duration: TBA</div>
+                            <div class="course-meta"><i class="fa-solid fa-calendar-days"></i> Batch: TBA</div>
+                        </div>
+                        <div class="card-buttons">
+                            <span class="btn-disabled" style="flex:1; background:#f8fafc; border:1px solid #edf2f7; padding:10px; border-radius:6px; text-align:center;">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="logo.png" alt="HealthValue Analytics" class="logo-img-footer">
+            </div>
+            <div class="office-info">
+                <h4><i class="fa-solid fa-location-dot"></i> India Office</h4>
+                <p>Bibinagar, Near AIIMS,<br>Bibinagar, 508126<br>
+                Email: <a href="mailto:healthvalueanalytics@gmail.com" class="footer-email">healthvalueanalytics@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html#about-us">About Us</a></li>
+                <li><a href="index.html#our-services">Services</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="ecourses.html">eCourse Programs</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Connect With Us</h3>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="work-with-us">
+                <h3>Work With Us</h3>
+                <p>Explore our <a href="careers.html" class="career-link">CAREERS</a> page.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
+    </div>
+</footer>
+<!-- Apply Now Modal -->
+<div class="modal-overlay" id="apply-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="close-apply" aria-label="Close modal">&times;</button>
+        
+        <div class="modal-header">
+            <h2>Course Application</h2>
+            <p class="modal-subtitle">Home / eCourse Programs / <strong id="dynamic-course-name">Selected Program</strong></p>
+        </div>
+
+        <div class="form-progress">
+            <div class="progress-step active" data-step="1"></div>
+            <div class="progress-step" data-step="2"></div>
+            <div class="progress-step" data-step="3"></div>
+        </div>
+        
+        <form id="apply-form" class="apply-form">
+            <input type="hidden" id="selected-course" name="selected-course">
+            
+            <!-- Step 1: Personal Details -->
+            <div class="form-step active" data-step="1">
+                <div class="form-section-title">
+                    <i class="fa-solid fa-user"></i> Personal Information
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="As per official documents" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91-XXXXX-XXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-grid" style="gap:10px; grid-template-columns: 1fr 1fr;">
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" name="age" min="18" max="100" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label for="sex">Sex *</label>
+                                <select id="sex" name="sex" required>
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address">Full Residential Address *</label>
+                        <textarea id="address" name="address" rows="2" placeholder="Street, City, State, ZIP, Country" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Education Details -->
+            <div class="form-step" data-step="2">
+                <div class="form-section-title">
+                    <i class="fa-solid fa-user-graduate"></i> Academic Background
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="highest-degree">Highest Qualification *</label>
+                        <input type="text" id="highest-degree" name="highest-degree" placeholder="e.g., PharmD, MBBS, PhD" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization">Specialization / Major *</label>
+                        <input type="text" id="specialization" name="specialization" placeholder="e.g., Pharmacology, Public Health" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">University / Institute *</label>
+                        <input type="text" id="university" name="university" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year-passing">Year of Passing *</label>
+                        <input type="number" id="year-passing" name="year-passing" min="1950" max="2026" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Professional Details & Others -->
+            <div class="form-step" data-step="3">
+                <div class="form-section-title">
+                    <i class="fa-solid fa-briefcase"></i> Professional Details
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="occupation">Current Occupation *</label>
+                        <input type="text" id="occupation" name="occupation" placeholder="e.g., Student, Researcher, Manager" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience (if any)</label>
+                        <input type="number" id="experience" name="experience" min="0" step="0.5">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="sop">Statement of Purpose</label>
+                        <textarea id="sop" name="sop" rows="3" placeholder="Briefly describe why you want to take this course..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-navigation">
+                <button type="button" class="btn-prev" id="prev-step" style="display:none;"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <button type="button" class="btn-next" id="next-step">Next <i class="fa-solid fa-arrow-right"></i></button>
+                <button type="submit" class="btn-submit-app" id="submit-form" style="display:none;">Submit Application <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </form>
+        
+        <!-- Success State -->
+        <div id="success-state" class="success-message" style="display:none;">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Application Received!</h3>
+            <p>Thank you for applying. Your details have been recorded in our database. Our course coordinator will review your application and contact you via email shortly.</p>
+            <button type="button" class="btn-next" onclick="closeApplyModal()" style="margin-top:20px; max-width:200px; margin-inline:auto;">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Navigation Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks   = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    }
+
+    // Modal & Form Elements
+    const applyModal = document.getElementById('apply-modal');
+    const closeApply = document.getElementById('close-apply');
+    const applyForm  = document.getElementById('apply-form');
+    const successState = document.getElementById('success-state');
+    const selectedCourseInput = document.getElementById('selected-course');
+    const dynamicCourseName = document.getElementById('dynamic-course-name');
+
+    // --- CONFIGURATION ---
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwUzDmlxViAQo30fEmtDZW32EE8nqDsciKH1loOv4WlvmsYuihhl2FE0Ra2uIc1aPp/exec';
+
+    // Multi-step Logic
+    let currentStep = 1;
+    const totalSteps = 3;
+    const steps = document.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    const btnNext = document.getElementById('next-step');
+    const btnPrev = document.getElementById('prev-step');
+    const btnSubmit = document.getElementById('submit-form');
+
+    function updateStep() {
+        steps.forEach(step => step.classList.remove('active'));
+        progressSteps.forEach((p, idx) => {
+            p.classList.remove('active', 'completed');
+            if (idx + 1 === currentStep) p.classList.add('active');
+            if (idx + 1 < currentStep) p.classList.add('completed');
+        });
+        document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+        // Update buttons
+        btnPrev.style.display = currentStep === 1 ? 'none' : 'flex';
+        if (currentStep === totalSteps) {
+            btnNext.style.display = 'none';
+            btnSubmit.style.display = 'flex';
+        } else {
+            btnNext.style.display = 'flex';
+            btnSubmit.style.display = 'none';
+        }
+    }
+
+    btnNext.addEventListener('click', () => {
+        const currentInputs = steps[currentStep-1].querySelectorAll('input[required], select[required], textarea[required]');
+        let valid = true;
+        currentInputs.forEach(input => {
+            if (!input.value) {
+                input.style.borderColor = '#ef4444';
+                valid = false;
+            } else {
+                input.style.borderColor = '';
+            }
+        });
+
+        if (valid && currentStep < totalSteps) {
+            currentStep++;
+            updateStep();
+        }
+    });
+
+    btnPrev.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateStep();
+        }
+    });
+
+    // Function to open modal
+    function openApplyModal(courseName) {
+        selectedCourseInput.value = courseName;
+        dynamicCourseName.innerText = courseName;
+        applyModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        
+        // Reset form state
+        currentStep = 1;
+        updateStep();
+        applyForm.style.display = 'block';
+        successState.style.display = 'none';
+    }
+
+    function closeApplyModal() {
+        applyModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // Attach listeners to "Apply Now" buttons
+    document.querySelectorAll('.btn-apply-small').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.course-card');
+            const title = card.querySelector('h3').innerText;
+            openApplyModal(title);
+        });
+    });
+
+    closeApply.addEventListener('click', closeApplyModal);
+    applyModal.addEventListener('click', (e) => {
+        if (e.target === applyModal) closeApplyModal();
+    });
+
+    // Form Submission (Automated)
+    applyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submit-form');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+
+        const formData = new FormData(applyForm);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Prepare payload
+        const payload = {
+            subject: `Course Application: ${data['selected-course']} - ${data['full-name']}`,
+            ...data,
+            source: 'eCourse Listing Application Form'
+        };
+
+        // Send to Google Apps Script
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            // Show success state
+            applyForm.style.display = 'none';
+            successState.style.display = 'block';
+            applyForm.reset();
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('There was an error submitting your application. Please check your internet connection and try again.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        });
+    });
+</script>
+</body>
+</html>

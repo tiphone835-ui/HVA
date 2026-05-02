@@ -3,731 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HVA Community Blog – HealthValue Analytics</title>
-    <meta name="description" content="Share your research experience with the HVA community. Read stories from researchers and healthcare professionals worldwide.">
+    <title>Expert Insights - HealthValue Analytics (HVA)</title>
+    <meta name="description" content="Latest updates and insights from the HealthValue Analytics team.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        /* ── Hero ── */
-        .blog-hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 60%, #2a9d8f 100%);
-            padding: 55px 0 45px;
+        :root {
+            --feed-bg: #f0f2f5;
+            --hva-blue: #1b3a5c;
+            --hva-teal: #2a9d8f;
+        }
+
+        .feed-hero {
+            background: linear-gradient(135deg, var(--hva-blue) 0%, var(--hva-teal) 100%);
+            color: white;
+            padding: 60px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .blog-hero h1 {
+
+        .feed-hero h1 {
             font-size: 2.8rem;
             font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .feed-container {
+            padding: 50px 0;
+            background: var(--feed-bg);
+            min-height: 800px;
+        }
+
+        .feed-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Update Card --- */
+        .update-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e1e4e8;
+            transition: transform 0.2s;
+        }
+
+        .update-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .team-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--hva-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            border: 2px solid var(--hva-teal);
+            overflow: hidden;
+        }
+
+        .author-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .update-info h4 {
+            color: var(--hva-blue);
+            margin: 0;
+            font-size: 1.15rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .author-meta {
+            font-size: 0.8rem;
+            color: var(--hva-teal);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .update-body {
+            color: #1e293b;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            white-space: pre-wrap;
+        }
+
+        .hashtag {
+            color: #007bff;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .hashtag:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Skeleton Loading --- */
+        .skeleton {
+            background: #e2e8f0;
+            background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 12px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        #no-updates {
+            text-align: center;
+            padding: 100px 20px;
+            color: #64748b;
+            display: none;
+        }
+        /* --- Contribute CTA --- */
+        .contribute-card {
+            background: linear-gradient(135deg, var(--hva-blue), #1e293b);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 80px;
+            box-shadow: 0 20px 40px rgba(13, 27, 42, 0.2);
+            border: 1px solid rgba(42, 157, 143, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .contribute-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px; height: 150px;
+            background: radial-gradient(circle, rgba(42, 157, 143, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .contribute-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
             color: #fff;
             letter-spacing: -0.5px;
-            position: relative;
         }
-        .blog-hero .tagline {
+        .contribute-card p {
+            color: #94a3b8;
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.72);
-            margin-top: 10px;
-            font-weight: 400;
-            position: relative;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 30px;
         }
-        .blog-hero .post-count-badge {
-            display: inline-block;
-            margin-top: 16px;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #fff;
-            font-size: 0.82rem;
-            font-weight: 600;
-            padding: 5px 16px;
+        .email-badge {
+            background: rgba(42, 157, 143, 0.1);
+            border: 1px solid var(--hva-teal);
+            padding: 14px 32px;
             border-radius: 50px;
-            backdrop-filter: blur(4px);
-            position: relative;
-        }
-
-        /* ── Page layout ── */
-        .blog-section {
-            background: #f4f7fb;
-            padding: 50px 0 80px;
-        }
-        .blog-layout {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 36px;
-            align-items: start;
-            margin-top: 10px;
-        }
-        @media (max-width: 900px) {
-            .blog-layout { grid-template-columns: 1fr; }
-            .blog-sidebar { order: -1; }
-        }
-
-        /* ── Section label / heading ── */
-        .section-label {
-            font-size: 0.75rem;
+            color: var(--hva-teal);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #2a9d8f;
-            margin-bottom: 6px;
-        }
-        .section-heading {
-            font-size: 1.7rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            letter-spacing: -0.3px;
-            margin-bottom: 4px;
-        }
-        .section-divider {
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #2a9d8f, var(--primary-color));
-            border-radius: 2px;
-            margin-bottom: 28px;
-        }
-
-        /* ── Share form (sidebar) ── */
-        .blog-sidebar {
-            position: sticky;
-            top: 90px;
-        }
-        .share-card {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 6px 30px rgba(0,0,0,0.09);
-            overflow: hidden;
-            border: 1px solid #e4eaf2;
-        }
-        .share-card-header {
-            background: linear-gradient(135deg, var(--primary-color), #2a9d8f);
-            padding: 22px 24px 18px;
-            color: #fff;
-        }
-        .share-card-header h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin: 0;
-        }
-        .share-card-header p {
-            font-size: 0.82rem;
-            opacity: 0.8;
-            margin-top: 4px;
-        }
-        .share-card-body {
-            padding: 24px;
-        }
-
-        /* Steps */
-        .step-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        .step-dot {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border: 2px solid #d0d8e4;
-            color: #aaa;
-            transition: all 0.3s;
-            flex-shrink: 0;
-        }
-        .step-dot.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: #fff;
-        }
-        .step-dot.done {
-            background: #2a9d8f;
-            border-color: #2a9d8f;
-            color: #fff;
-        }
-        .step-line {
-            flex: 1;
-            height: 2px;
-            background: #e0e5ec;
-            border-radius: 1px;
-        }
-        .step-line.done { background: #2a9d8f; }
-
-        /* Form fields */
-        .form-group {
-            margin-bottom: 16px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 6px;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 11px 14px;
-            border: 1.5px solid #dde3ee;
-            border-radius: 10px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.92rem;
-            color: var(--text-dark);
-            outline: none;
-            transition: border-color 0.25s, box-shadow 0.25s;
-            resize: none;
-            background: #f9fafc;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #2a9d8f;
-            box-shadow: 0 0 0 3px rgba(42,157,143,0.12);
-            background: #fff;
-        }
-        .char-counter {
-            text-align: right;
-            font-size: 0.75rem;
-            color: #999;
-            margin-top: 4px;
-            transition: color 0.2s;
-        }
-        .char-counter.warning { color: #e07b00; }
-        .char-counter.danger  { color: #d32f2f; }
-
-        .btn-next, .btn-post, .btn-back {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            padding: 11px 22px;
-            border-radius: 50px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.25s;
+            gap: 12px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.05rem;
         }
-        .btn-next, .btn-post {
-            background: linear-gradient(135deg, var(--primary-color), #2a9d8f);
-            color: #fff;
-            box-shadow: 0 4px 14px rgba(13,27,42,0.2);
-            width: 100%;
-            justify-content: center;
-        }
-        .btn-next:hover, .btn-post:hover {
-            filter: brightness(1.1);
-            transform: translateY(-2px);
-        }
-        .btn-back {
-            background: #f0f4f8;
-            color: var(--primary-color);
-            padding: 10px 18px;
-            margin-right: 8px;
-        }
-        .btn-back:hover { background: #e2e8f0; }
-        .form-actions { display: flex; align-items: center; margin-top: 4px; }
-
-        /* Step panels */
-        .step-panel { display: none; }
-        .step-panel.active { display: block; }
-
-        /* Greeting in step 2 */
-        .step2-greeting {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 16px;
-            padding: 10px 14px;
-            background: #f0faf8;
-            border-radius: 10px;
-            border-left: 3px solid #2a9d8f;
-        }
-        .step2-greeting strong { color: var(--primary-color); }
-
-        /* Success toast */
-        .toast {
-            display: none;
-            align-items: center;
-            gap: 10px;
-            background: #e6fffa;
-            border: 1px solid #81e6d9;
-            border-radius: 10px;
-            padding: 13px 16px;
-            font-size: 0.88rem;
-            color: #2c7a7b;
-            font-weight: 500;
-            margin-top: 14px;
-        }
-        .toast.show { display: flex; }
-        .toast i { font-size: 1.1rem; color: #2a9d8f; }
-
-        /* ── Experience feed ── */
-        .feed-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .feed-count {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #888;
-            background: #eef2f7;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .email-badge:hover {
+            background: var(--hva-teal);
+            color: white;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(42, 157, 143, 0.3);
         }
 
-        .experience-card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 22px 24px;
-            box-shadow: 0 3px 14px rgba(0,0,0,0.06);
-            border: 1px solid #eaedf2;
-            margin-bottom: 20px;
-            position: relative;
-            transition: transform 0.25s, box-shadow 0.25s;
-            animation: fadeSlideIn 0.4s ease;
-        }
-        @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .experience-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 28px rgba(0,0,0,0.1);
-        }
 
-        .exp-card-top {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 14px;
-        }
-        .exp-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), #2a9d8f);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .exp-meta { flex: 1; }
-        .exp-name {
-            font-size: 0.97rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        .exp-date {
-            font-size: 0.74rem;
-            color: #aaa;
-            margin-top: 2px;
-        }
-        .exp-quote-icon {
-            color: #e0e8f0;
-            font-size: 1.6rem;
-            line-height: 1;
-        }
-        .exp-text {
-            font-size: 0.95rem;
-            color: #444;
-            line-height: 1.75;
-        }
-
-        .empty-feed {
-            text-align: center;
-            padding: 50px 20px;
-            color: #bbb;
-        }
-        .empty-feed i {
-            font-size: 3rem;
-            margin-bottom: 14px;
-            display: block;
-            color: #dde3ee;
-        }
-        .empty-feed p { font-size: 1rem; font-style: italic; }
-
-        /* ── Delete button ── */
-        .btn-delete {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            background: none;
-            border: 1px solid #f0d5d5;
-            color: #c0392b;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 0.72rem;
-            opacity: 0;
-            transition: opacity 0.2s, background 0.2s, transform 0.2s;
-        }
-        .experience-card:hover .btn-delete {
-            opacity: 1;
-        }
-        .btn-delete:hover {
-            background: #fdecea;
-            transform: scale(1.1);
-        }
-        .experience-card.deleting {
-            animation: fadeOut 0.35s ease forwards;
-        }
-        @keyframes fadeOut {
-            to { opacity: 0; transform: scale(0.95); height: 0; padding: 0; margin: 0; overflow: hidden; }
+        @media (max-width: 768px) {
+            .feed-hero h1 { font-size: 2.2rem; }
+            .update-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="logo">
-            <img src="logo.png" alt="HealthValue Analytics Pvt Ltd" class="logo-img">
-        </a>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span><span></span><span></span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="HealthValue Analytics" class="logo-img">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#about-us">About Us</a>
+                <a href="index.html#our-services">Services</a>
+                <a href="index.html#subject-coverage">Subject</a>
+                <a href="blog.html" class="nav-active">Insights</a>
+                <a href="publications.html">Publications</a>
+                <a href="ecourses.html" class="nav-ecourses">eCourse Programs</a>
+            </div>
+            <a href="contact.html" class="btn-contact">Contact Us</a>
         </div>
-        <div class="nav-links">
-            <a href="index.html#about-us">About Us</a>
-            <a href="index.html#our-services">Services</a>
-            <a href="index.html#subject-coverage">Subject</a>
-            <a href="#">Case Studies</a>
-            <a href="publications.html">Publications</a>
-            <a href="blog.html" class="nav-blog" style="color:#2a9d8f;font-weight:700;">Blog</a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="feed-hero">
+        <div class="container">
+            <h1>HVA Expert Insights</h1>
+            <p>In-depth articles and research news shared directly by our experts.</p>
         </div>
-        <a href="contact.html" class="btn-contact">Contact Us</a>
-    </div>
-</nav>
+    </header>
 
-<!-- Hero -->
-<header class="blog-hero">
-    <div class="container hero-content">
-        <h1><i class="fa-solid fa-comments" style="font-size:2rem;vertical-align:middle;margin-right:10px;"></i>HVA Community Blog</h1>
-        <p class="tagline">A space for researchers and healthcare professionals to share their journey</p>
-        <span class="post-count-badge" id="post-count-badge">0 Experiences Shared</span>
-    </div>
-</header>
-
-<!-- Blog Section -->
-<section class="blog-section">
-    <div class="container">
-        <div class="blog-layout">
-
-            <!-- LEFT: Feed -->
-            <div class="blog-feed">
-                <div class="feed-header">
-                    <div>
-                        <p class="section-label">Community Voices</p>
-                        <h2 class="section-heading">Shared Experiences</h2>
-                        <div class="section-divider"></div>
-                    </div>
-                    <span class="feed-count" id="feed-count">0 posts</span>
-                </div>
-
-                <div id="experience-feed">
-                    <div class="empty-feed" id="empty-state">
-                        <i class="fa-regular fa-comment-dots"></i>
-                        <p>No experiences shared yet.<br>Be the first to share yours!</p>
-                    </div>
-                </div>
+    <!-- Feed Section -->
+    <section class="feed-container">
+        <div class="container feed-content">
+            
+            <!-- Loading Skeletons -->
+            <div id="loading-state">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
             </div>
 
-            <!-- RIGHT: Share Form -->
-            <div class="blog-sidebar">
-                <div class="share-card">
-                    <div class="share-card-header">
-                        <h3><i class="fa-solid fa-pen-to-square"></i> Share Your Experience</h3>
-                        <p>Max 300 characters · Takes 30 seconds</p>
-                    </div>
-                    <div class="share-card-body">
+            <!-- Empty State -->
+            <div id="no-updates">
+                <i class="fa-solid fa-feather-pointed" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+                <h3>No updates yet</h3>
+                <p>Check back soon for news from the HVA team.</p>
+            </div>
 
-                        <!-- Step indicator -->
-                        <div class="step-indicator">
-                            <div class="step-dot active" id="dot-1">1</div>
-                            <div class="step-line" id="line-1"></div>
-                            <div class="step-dot" id="dot-2">2</div>
+            <!-- The Feed -->
+            <div id="update-feed"></div>
+
+            <!-- Contribute CTA -->
+            <div class="contribute-card">
+                <i class="fa-solid fa-pen-nib" style="font-size: 2.5rem; color: var(--hva-teal); margin-bottom: 20px;"></i>
+                <h3>Share Your Insights</h3>
+                <p>We welcome contributions from healthcare professionals, researchers, and students. Email us your blog along with your <strong>Name</strong>, <strong>Designation</strong>, <strong>Content</strong>, and an <strong>Image</strong> (if you want).</p>
+                <a href="mailto:healthvalue.connect@gmail.com" class="email-badge">
+                    <i class="fa-solid fa-paper-plane"></i> healthvalue.connect@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwUzDmlxViAQo30fEmtDZW32EE8nqDsciKH1loOv4WlvmsYuihhl2FE0Ra2uIc1aPp/exec';
+
+        let allPosts = [];
+
+        async function fetchUpdates() {
+            try {
+                const response = await fetch(`${SCRIPT_URL}?action=getBlog`);
+                const data = await response.json();
+                
+                document.getElementById('loading-state').style.display = 'none';
+                
+                // Filter: Only show posts where Approved is "TRUE"
+                allPosts = (data.posts || []).filter(p => p.Approved === "TRUE" || p.Approved === true);
+
+                if (allPosts.length === 0) {
+                    document.getElementById('no-updates').style.display = 'block';
+                    return;
+                }
+
+                renderFeed(allPosts);
+            } catch (error) {
+                console.error("Error fetching updates:", error);
+                document.getElementById('loading-state').style.display = 'none';
+                document.getElementById('no-updates').style.display = 'block';
+            }
+        }
+
+        function filterByTag(tag) {
+            const filtered = allPosts.filter(p => 
+                p.Content && p.Content.toLowerCase().includes('#' + tag.toLowerCase())
+            );
+            renderFeed(filtered, tag);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function clearFilter() {
+            renderFeed(allPosts);
+        }
+
+        function formatContent(text) {
+            if (!text) return "";
+            // Replace hashtags with clickable links
+            return text.replace(/#(\w+)/g, '<a href="javascript:void(0)" onclick="filterByTag(\'$1\')" class="hashtag">#$1</a>');
+        }
+
+        function renderFeed(posts, activeTag = null) {
+            const feedContainer = document.getElementById('update-feed');
+            
+            let html = "";
+            
+            if (activeTag) {
+                html += `
+                    <div style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px 25px; border-radius: 12px; border: 1px solid var(--hva-teal); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="color: var(--hva-blue); font-weight: 600;">
+                            <i class="fa-solid fa-filter"></i> Showing posts for <span class="hashtag">#${activeTag}</span>
                         </div>
-
-                        <!-- Step 1: Name -->
-                        <div class="step-panel active" id="step-1">
-                            <div class="form-group">
-                                <label for="input-name"><i class="fa-solid fa-user"></i> Your Name</label>
-                                <input type="text" id="input-name" placeholder="e.g. Dr. Priya Sharma" maxlength="60" autocomplete="off">
-                            </div>
-                            <button class="btn-next" id="btn-next" onclick="goToStep2()">
-                                Next <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-
-                        <!-- Step 2: Experience -->
-                        <div class="step-panel" id="step-2">
-                            <div class="step2-greeting" id="step2-greeting">
-                                Hello, <strong id="greeting-name"></strong>! Tell us about your experience.
-                            </div>
-                            <div class="form-group">
-                                <label for="input-exp"><i class="fa-solid fa-quote-left"></i> Your Experience</label>
-                                <textarea id="input-exp" rows="5" placeholder="Share what you experienced working with HVA, your research journey, or insights... (max 300 characters)" maxlength="300" oninput="updateCounter()"></textarea>
-                                <div class="char-counter" id="char-counter">0 / 300 characters</div>
-                            </div>
-                            <div class="form-actions">
-                                <button class="btn-back" onclick="goToStep1()"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                                <button class="btn-post" onclick="submitExperience()" style="flex:1;">
-                                    <i class="fa-solid fa-paper-plane"></i> Post Experience
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Success toast -->
-                        <div class="toast" id="success-toast">
-                            <i class="fa-solid fa-circle-check"></i>
-                            Thank you! Your experience has been shared.
-                        </div>
-
+                        <button onclick="clearFilter()" style="background: var(--hva-blue); color: white; border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: opacity 0.2s;">View All Posts</button>
                     </div>
-                </div>
-            </div>
+                `;
+            }
 
-        </div>
-    </div>
-</section>
+            if (posts.length === 0) {
+                html += `<div style="text-align:center; padding: 50px; color: #64748b;">No posts found with this tag.</div>`;
+            } else {
+                html += posts.map(post => {
+                    const name = post.AuthorName || 'HVA Team';
+                    const role = post.AuthorRole || 'Healthcare Analytics Expert';
+                    const image = post.AuthorImage || '';
+                    const avatarContent = image 
+                        ? `<img src="${image}" alt="${name}" class="author-img">`
+                        : name.charAt(0);
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container footer-grid">
-        <div class="footer-col">
-            <div class="footer-logo">
-                <img src="logo.png" alt="HealthValue Analytics" class="logo-img-footer">
-            </div>
-            <div class="office-info">
-                <h4><i class="fa-solid fa-location-dot"></i> India Office</h4>
-                <p>Bibinagar, Near AIIMS,<br>Bibinagar, 508126<br>
-                Email: <a href="mailto:healthvalueanalytics@gmail.com" class="footer-email">healthvalueanalytics@gmail.com</a></p>
-            </div>
-        </div>
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="index.html#about-us">About Us</a></li>
-                <li><a href="index.html#our-services">Services</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="blog.html">Community Blog</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h3>Connect With Us</h3>
-            <ul class="footer-links">
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="work-with-us">
-                <h3>Work With Us</h3>
-                <p>Explore our <a href="careers.html" class="career-link">CAREERS</a> page.</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 HealthValue Analytics. All rights reserved.</p>
-    </div>
-</footer>
+                    return `
+                        <div class="update-card">
+                            <div class="update-header">
+                                <div class="team-avatar">${avatarContent}</div>
+                                <div class="update-info">
+                                    <div class="author-meta">${role}</div>
+                                    <h4>${name}</h4>
+                                    <div class="update-date"><i class="fa-regular fa-clock"></i> ${post.Date || 'Recently posted'}</div>
+                                </div>
+                            </div>
+                            <div class="update-body">${formatContent(post.Content || '')}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            feedContainer.innerHTML = html;
+        }
 
-<script>
-    // ── Mobile menu ──
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks   = document.querySelector('.nav-links');
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('open');
-        });
-    }
-
-    // ── State ──
-    const MAX_CHARS = 300;
-    let currentName = '';
-
-    // ── LocalStorage helpers ──
-    function getPosts() {
-        try { return JSON.parse(localStorage.getItem('hva_blog_posts') || '[]'); }
-        catch { return []; }
-    }
-    function savePosts(posts) {
-        localStorage.setItem('hva_blog_posts', JSON.stringify(posts));
-    }
-
-    // ── Avatar initials ──
-    function getInitial(name) {
-        return name.trim().charAt(0).toUpperCase();
-    }
-
-    // ── Format date ──
-    function formatDate(iso) {
-        const d = new Date(iso);
-        return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) +
-               ' · ' + d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
-    }
-
-    // ── Render a single card ──
-    function renderCard(post, index) {
-        const div = document.createElement('div');
-        div.className = 'experience-card';
-        div.dataset.id = post.id || post.date;
-        div.innerHTML = `
-            <button class="btn-delete" title="Delete post" onclick="deletePost('${post.id || post.date}', this)">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-            <div class="exp-card-top">
-                <div class="exp-avatar">${getInitial(post.name)}</div>
-                <div class="exp-meta">
-                    <div class="exp-name">${escapeHtml(post.name)}</div>
-                    <div class="exp-date"><i class="fa-regular fa-clock"></i> ${formatDate(post.date)}</div>
-                </div>
-                <div class="exp-quote-icon"><i class="fa-solid fa-quote-right"></i></div>
-            </div>
-            <p class="exp-text">${escapeHtml(post.text)}</p>
-        `;
-        return div;
-    }
-
-    // ── Delete a post ──
-    function deletePost(postId, btn) {
-        const card = btn.closest('.experience-card');
-        card.classList.add('deleting');
-        setTimeout(() => {
-            const posts = getPosts().filter(p => (p.id || p.date) !== postId);
-            savePosts(posts);
-            renderFeed();
-        }, 350);
-    }
-
-    // ── Escape HTML ──
-    function escapeHtml(str) {
-        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-                  .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-    }
-
-    // ── Render full feed ──
-    function renderFeed() {
-        const posts = getPosts();
-        const feed  = document.getElementById('experience-feed');
-        const empty = document.getElementById('empty-state');
-        const feedCount = document.getElementById('feed-count');
-        const badgeCount = document.getElementById('post-count-badge');
-
-        const count = posts.length;
-        feedCount.textContent  = `${count} post${count !== 1 ? 's' : ''}`;
-        badgeCount.textContent = `${count} Experience${count !== 1 ? 's' : ''} Shared`;
-
-        // Clear all except empty-state
-        Array.from(feed.children).forEach(el => {
-            if (el.id !== 'empty-state') el.remove();
-        });
-
-        if (count === 0) {
-            empty.style.display = 'block';
-        } else {
-            empty.style.display = 'none';
-            // Newest first
-            [...posts].reverse().forEach(post => {
-                feed.insertBefore(renderCard(post), feed.firstChild);
+        // Mobile Menu
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('open');
             });
         }
-    }
 
-    // ── Step navigation ──
-    function goToStep2() {
-        const name = document.getElementById('input-name').value.trim();
-        if (!name) {
-            document.getElementById('input-name').focus();
-            document.getElementById('input-name').style.borderColor = '#d32f2f';
-            setTimeout(() => document.getElementById('input-name').style.borderColor = '', 1500);
-            return;
-        }
-        currentName = name;
-        document.getElementById('greeting-name').textContent = name.split(' ')[0];
-        document.getElementById('step-1').classList.remove('active');
-        document.getElementById('step-2').classList.add('active');
-        document.getElementById('dot-1').className = 'step-dot done';
-        document.getElementById('dot-1').innerHTML = '<i class="fa-solid fa-check" style="font-size:0.7rem"></i>';
-        document.getElementById('dot-2').classList.add('active');
-        document.getElementById('line-1').classList.add('done');
-        document.getElementById('input-exp').focus();
-    }
-
-    function goToStep1() {
-        document.getElementById('step-2').classList.remove('active');
-        document.getElementById('step-1').classList.add('active');
-        document.getElementById('dot-1').className = 'step-dot active';
-        document.getElementById('dot-1').textContent = '1';
-        document.getElementById('dot-2').className = 'step-dot';
-        document.getElementById('line-1').classList.remove('done');
-        document.getElementById('success-toast').classList.remove('show');
-    }
-
-    // ── Char counter ──
-    function updateCounter() {
-        const len = document.getElementById('input-exp').value.length;
-        const counter = document.getElementById('char-counter');
-        counter.textContent = `${len} / ${MAX_CHARS} characters`;
-        counter.className = 'char-counter';
-        if (len >= MAX_CHARS)       counter.classList.add('danger');
-        else if (len >= MAX_CHARS * 0.8) counter.classList.add('warning');
-    }
-
-    // ── Submit ──
-    function submitExperience() {
-        const text = document.getElementById('input-exp').value.trim();
-        if (!text) {
-            document.getElementById('input-exp').focus();
-            document.getElementById('input-exp').style.borderColor = '#d32f2f';
-            setTimeout(() => document.getElementById('input-exp').style.borderColor = '', 1500);
-            return;
-        }
-
-        const posts = getPosts();
-        posts.push({ id: Date.now().toString(), name: currentName, text, date: new Date().toISOString() });
-        savePosts(posts);
-        renderFeed();
-
-        // Reset form
-        document.getElementById('input-exp').value = '';
-        document.getElementById('input-name').value = '';
-        updateCounter();
-        document.getElementById('success-toast').classList.add('show');
-
-        // Back to step 1 after delay
-        setTimeout(() => {
-            goToStep1();
-        }, 2200);
-    }
-
-    // ── Enter key for step 1 ──
-    document.getElementById('input-name').addEventListener('keydown', e => {
-        if (e.key === 'Enter') goToStep2();
-    });
-
-    // ── Init ──
-    renderFeed();
-</script>
+        fetchUpdates();
+    </script>
 </body>
 </html>
