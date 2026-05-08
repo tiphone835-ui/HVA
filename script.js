@@ -42,51 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             category: "Medical & Health Sciences",
-            topic: "Deprescribing",
-            slrTitle: 'Towards safer medication use in older adults: Investigating barriers and facilitators of deprescribing',
-            journal: "British Journal of Clinical Pharmacology",
+            topic: "Clinical Genetics",
+            slrTitle: 'Distinct genetic variants from the whole-exome sequencing of syndromic anorectal malformations: A cross-sectional study',
+            journal: "iScience a Cell Press",
+            author: "Dr. Sunil Polipalli",
+            status: "Completed",
+            color: "#ffffff",
+            image: "genomic_research.jpg.jpeg",
+            icon: "fa-dna",
+            link: "https://www.cell.com/iscience/fulltext/S2589-0042(26)00951-X?uuid=uuid%3A49c6f759-d654-44c5-ba97-cb4af71ade6b"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "Genetic testing",
+            slrTitle: 'Genetic insights: proband- only exome sequencing in pediatric neurological disorders',
+            journal: "Journal of Community Genetics",
+            author: "Dr. Sunil Polipalli",
+            status: "Completed",
+            color: "#ffffff",
+            image: "pediatric_neuro_v2.jpg.jpeg",
+            icon: "fa-dna",
+            link: "https://link.springer.com/article/10.1007/s12687-026-00870-2"
+        },
+        {
+            category: "Medical & Health Sciences",
+            topic: "Sickle cell disease",
+            slrTitle: 'A systematic review on hydroxyurea therapy for sickle cell disease in India',
+            journal: "Indian Journal of Medical Research",
             author: "Dr. Vijaya Kumar Karra",
             status: "Completed",
             color: "#ffffff",
-            image: "deprescribing.jpg",
-            icon: "fa-pills",
-            link: "https://bpspubs.onlinelibrary.wiley.com/doi/10.1002/bcp.70319"
-        },
-        {
-            category: "Medical & Health Sciences",
-            topic: "Polypharmacy and Deprescribing",
-            slrTitle: 'Exploring the Knowledge and Attitudes of Physicians on Polypharmacy and Deprescribing in Clinical Practice: a Cross-Sectional Study',
-            journal: "Mædica - a Journal of Clinical Medicine",
-            author: "Dr. Vijaya Kumar Karra",
-            status: "Completed",
-            color: "#ffffff",
-            image: "polypharmacy.jpg",
-            icon: "fa-prescription-bottle-medical",
-            link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12347019/"
-        },
-        {
-            category: "Medical & Health Sciences",
-            topic: "COVID-19",
-            slrTitle: 'Transformative role of artificial intelligence (AI) in pandemic preparedness and mitigation: the COVID-19 experience',
-            journal: "Discover Artificial Intelligence",
-            author: "Sai Kiran G",
-            status: "Completed",
-            color: "#ffffff",
-            image: "covid_ai.jpg",
-            icon: "fa-virus-covid",
-            link: "https://link.springer.com/article/10.1007/s44163-025-00625-x"
-        },
-        {
-            category: "Medical & Health Sciences",
-            topic: "Sickle Cell Disease",
-            slrTitle: 'IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
-            journal: "Journal of Chemical Health Risks",
-            author: "Dr. Varun Chaithanya Gurram",
-            status: "Completed",
-            color: "#ffffff",
-            image: "sickle_cell.jpg",
+            image: "hydroxyurea_therapy.png",
             icon: "fa-microscope",
-            link: "https://www.jchr.org/index.php/JCHR/article/view/6541"
+            link: "https://journals.lww.com/ijmr/fulltext/2022/08000/a_systematic_review_on_hydroxyurea_therapy_for.18.aspx"
         },
         {
             category: "Medical & Health Sciences",
@@ -122,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: "#ffffff",
             image: "hcv_liver.jpeg",
             icon: "fa-virus",
-            link: "https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.24849"
+            link: "https://onlinelibrary.wiley.com/journal/10969071"
         },
         {
             category: "Medical & Health Sciences",
@@ -148,6 +136,18 @@ document.addEventListener('DOMContentLoaded', () => {
             icon: "fa-vial",
             link: "https://www.sciencedirect.com/science/article/abs/pii/S0973688316303036"
         },
+        {
+            category: "Medical & Health Sciences",
+            topic: "Sickle Cell Disease",
+            slrTitle: 'IL-1β (+3954C>T) Polymorphism in Sickle Cell Disease: A Call for Larger-Scale Studies',
+            journal: "Journal of Chemical Health Risks",
+            author: "Dr. Varun Chaithanya Gurram",
+            status: "Completed",
+            color: "#ffffff",
+            image: "sickle_cell.jpg",
+            icon: "fa-microscope",
+            link: "https://www.jchr.org/index.php/JCHR/article/view/6541"
+        }
     ];
     // -------------------------
 
